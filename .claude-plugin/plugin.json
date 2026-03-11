@@ -1,0 +1,10 @@
+{
+  "name": "quickflow",
+  "version": "1.0.0",
+  "description": "A design toolkit for rapid iteration — brief, explore concepts, wireframe, and test with AI personas.",
+  "author": {
+    "name": "Rod Howard"
+  },
+  "keywords": ["design", "wireframing", "usability-testing", "prototyping", "product-design"],
+  "license": "MIT"
+}
