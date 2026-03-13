@@ -1,5 +1,5 @@
 ---
-name: pivot
+name: concept-branching
 description: Use when you want to explore an alternative design direction from the current project, either fresh from the brief or branching into an unchosen concept approach
 ---
 
@@ -13,11 +13,11 @@ $ARGUMENTS contains the variant name as the first word or hyphenated slug (e.g.,
 
 ## Mode 1: Fresh pivot
 
-`pivot variant-name [optional fork context]`
+`concept-branching variant-name [optional fork context]`
 
 ### Steps
 
-1. Check if the current directory name contains `--`. If so, stop and tell the user: "Can't pivot a pivot. Pivot the parent instead: run the pivot skill from `{parent}`" (where parent is the part before `--`).
+1. Check if the current directory name contains `--`. If so, stop and tell the user: "Can't pivot a pivot. Pivot the parent instead: run the concept-branching skill from `{parent}`" (where parent is the part before `--`).
 2. Get the current directory name. Create the sibling directory: `../{current-dir-name}--{variant-name}/`
 3. Copy `brief.md` from the current directory into the new directory.
 4. Copy `personas.md` from the current directory into the new directory (if it exists).
@@ -31,11 +31,11 @@ $ARGUMENTS contains the variant name as the first word or hyphenated slug (e.g.,
 
 ## Mode 2: Branch into unchosen approach
 
-`pivot variant-name --approach "Approach Name"`
+`concept-branching variant-name --approach "Approach Name"`
 
 ### Steps
 
-1. Check if the current directory name contains `--`. If so, stop: "Can't pivot a pivot. Pivot the parent instead: run the pivot skill from `{parent}`."
+1. Check if the current directory name contains `--`. If so, stop: "Can't pivot a pivot. Pivot the parent instead: run the concept-branching skill from `{parent}`."
 2. Get the current directory name. Create the sibling directory: `../{current-dir-name}--{variant-name}/`
 3. Copy `brief.md` from the current directory into the new directory.
 4. Copy `personas.md` from the current directory into the new directory (if it exists).
@@ -54,7 +54,7 @@ $ARGUMENTS contains the variant name as the first word or hyphenated slug (e.g.,
 
 ## Error handling
 
-- If $ARGUMENTS is empty: "Usage: `pivot variant-name` — e.g., `pivot alt-nav` or `pivot alt-nav --approach "Approach B"`"
+- If $ARGUMENTS is empty: "Usage: `concept-branching variant-name` — e.g., `concept-branching alt-nav` or `concept-branching alt-nav --approach "Approach B"`"
 - If the pivot directory already exists: "That pivot already exists. `cd` into it to resume, or choose a different name."
 - If the current directory has no `brief.md`: "No brief found in the current directory. Run the design-briefing skill first."
 - If `--approach` is specified but no `approaches.md` exists in the current directory: "No approaches.md found. Run concept-forming in the parent first to generate approaches."

@@ -40,7 +40,7 @@ After presenting approaches, immediately save them to `approaches.md` using the 
 - **Struggles when.** ...
 ```
 
-This preserves unchosen approaches for the pivot skill.
+This preserves unchosen approaches for the concept-branching skill.
 
 ### Step 2 — Tensions
 
