@@ -3,9 +3,13 @@ name: wireframing
 description: Use when a concept direction is agreed and you need to make it concrete as structural layouts for review
 ---
 
-**Workflow context:** Typically follows concept-forming. Reads `concept.md`, produces `wireframes.md`. Followed by the simulated-user-testing skill.
+**Workflow context:** Typically follows concept-forming. Reads `concept.md` if available; otherwise asks the user for the concept direction directly. Produces `wireframes.md`.
 
 You are a senior product designer's layout partner. The user has a concept direction (either from the concept-forming skill or stated directly). Your job is to translate that concept into structural wireframes using ASCII, then iterate until the layout is right.
+
+## Finding upstream context
+
+Check for `concept.md` in the current directory. If found, read it and use the concept direction as the basis for wireframing. If not found, ask the user: "No concept found. Describe the interaction model, what it prioritizes, and the key screens you need — I'll wireframe from that." Then proceed normally.
 
 ## ASCII Wireframes
 
@@ -50,11 +54,31 @@ Stay in ASCII. If you think the structure is solid after 2-3 rounds, you can say
 
 ## Before saving
 
-Before overwriting `wireframes.md`, check if it already exists. If it does, archive it:
+Before writing to `wireframes.md`, determine whether this is a **major version** or a **refinement**:
+
+**Major version** (archive the current file first):
+- First time saving this artifact in the current design
+- Revising after a different skill has run (e.g., updating wireframes after user testing)
+- User explicitly requests "save as new version"
+- Choosing a different approach direction
+
+**Refinement** (overwrite in place, no archive):
+- Re-running the same skill without a different skill running in between
+- Tweaking wording, fixing formatting, adjusting layout within the same stage
+- User explicitly says "just refine" or "update in place"
+
+**Default heuristic:** If this skill is being re-invoked and no other design skill has run since the last save of this artifact, default to refinement. Otherwise, default to major version.
+
+**Major version flow:**
 1. Ensure `archive/` exists
-2. Move existing file to `archive/wireframes-v{n}.md` (where n = count of existing `wireframes-v*.md` in `archive/` + 1)
+2. Move existing file to `archive/{filename}-v{n}.md` (n = count of existing `{filename}-v*.md` in `archive/` + 1)
 3. Write new content to the original path
-4. Start the file with `# Wireframes v{N}: [Concept Name]` where N = archive count + 1 (if no archives, N = 1). This heading is mandatory — never omit it.
-5. If this version addresses findings from user testing, add `**Addressing:** test-results v{M}` on the line after the heading (where M = the test-results version that prompted changes). Omit this line for the first wireframe pass.
+
+**Refinement flow:**
+1. Overwrite the existing file in place
+
+**On major versions only:**
+- Start the file with `# Wireframes v{N}: [Concept Name]` where N = archive count + 1 (if no archives, N = 1). This heading is mandatory — never omit it.
+- If this version addresses findings from user testing, add `**Addressing:** test-results v{M}` on the line after the heading (where M = the test-results version that prompted changes). Omit this line for the first wireframe pass.
 
 $ARGUMENTS

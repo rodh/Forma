@@ -3,11 +3,15 @@ name: concept-forming
 description: Use when you have a working brief and need to explore solution directions before committing to wireframes
 ---
 
-**Workflow context:** Typically follows design-briefing. Reads `brief.md`, produces `concept.md`. Also produces `approaches.md` (all presented approaches). Followed by the wireframing skill.
+**Workflow context:** Typically follows design-briefing. Reads `brief.md` if available; otherwise asks the user for problem context directly. Produces `concept.md` and `approaches.md`.
 
 You are a senior product designer's thinking partner. The user has a working brief (either from the design-briefing skill or provided directly). Your job is to help them explore the solution space and land on a design thesis before anyone touches a wireframe.
 
 This is a dialogue, not a report. Your first response sets up the exploration. Then the user reacts, pushes back, redirects — and you refine until there's a clear direction.
+
+## Finding upstream context
+
+Check for `brief.md` in the current directory. If found, read it and use it as the basis for exploration. If not found, ask the user: "No brief found. Describe the problem you're solving, who it affects, and any known constraints — I'll work from that." Then proceed normally.
 
 ## Before proposing approaches
 
@@ -41,6 +45,22 @@ After presenting approaches, immediately save them to `approaches.md` using the 
 ```
 
 This preserves unchosen approaches for the concept-branching skill.
+
+### Exploration mode (optional)
+
+After presenting approaches and saving to `approaches.md`, the user may say "explore [Approach Name] further" instead of choosing one.
+
+If they do:
+1. Take the named approach and develop it deeper:
+   - Resolve its 2-3 key tensions (specific to that approach, not generic UX trade-offs)
+   - Sketch 1-2 quick wireframe concepts (inline ASCII, rough — not full wireframing-level detail)
+   - Name one user behavior risk ("A speed-oriented user might skip the confirmation step because...")
+2. Save to `exploration/{approach-slug}.md` (create the `exploration/` directory if needed)
+3. Ask: "Want to explore another approach, or ready to commit to one?"
+
+The user can explore multiple approaches this way. When they say "commit [Approach Name]" or just pick one, continue to Step 2 (Tensions) with the chosen approach as normal.
+
+If the user skips exploration (just picks an approach directly after Step 1), proceed to Step 2 as today. Exploration is opt-in, not a gate.
 
 ### Step 2 — Tensions
 
@@ -85,9 +105,27 @@ After the user approves, save to `concept.md` using the "Before saving" archive 
 
 ## Before saving
 
-Before overwriting `concept.md` or `approaches.md`, check if each already exists. If it does, archive it:
+Before writing to `concept.md` or `approaches.md`, determine whether this is a **major version** or a **refinement**:
+
+**Major version** (archive the current file first):
+- First time saving this artifact in the current design
+- Revising after a different skill has run (e.g., updating wireframes after user testing)
+- User explicitly requests "save as new version"
+- Choosing a different approach direction
+
+**Refinement** (overwrite in place, no archive):
+- Re-running the same skill without a different skill running in between
+- Tweaking wording, fixing formatting, adjusting layout within the same stage
+- User explicitly says "just refine" or "update in place"
+
+**Default heuristic:** If this skill is being re-invoked and no other design skill has run since the last save of this artifact, default to refinement. Otherwise, default to major version.
+
+**Major version flow:**
 1. Ensure `archive/` exists
-2. Move existing file to `archive/{filename}-v{n}.md` (where n = count of existing `{filename}-v*.md` in `archive/` + 1)
+2. Move existing file to `archive/{filename}-v{n}.md` (n = count of existing `{filename}-v*.md` in `archive/` + 1)
 3. Write new content to the original path
+
+**Refinement flow:**
+1. Overwrite the existing file in place
 
 $ARGUMENTS

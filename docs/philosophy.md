@@ -60,14 +60,18 @@ There's a practical benefit too. ASCII wireframes live in the same medium as eve
 
 ---
 
-## Refine vs. branch
+## Refine vs. explore vs. branch
 
-The system encodes a specific decision framework for when to iterate vs. when to branch:
+The system encodes a specific decision framework for when to tweak, when to explore, and when to diverge:
 
-**Refine** when the brief and problem framing are still right but the solution needs work. Re-run wireframing or concept-forming. The previous artifact auto-snapshots to `archive/` — you don't lose anything, but the design directory always shows the current version.
+**Refine** when you're making small tweaks within the same stage — adjusting wording, fixing layout, iterating on feedback without crossing a stage boundary. The artifact overwrites in place with no archive copy. This is the default when re-running the same skill without a different skill running in between.
 
-**Branch** when you need a structurally different approach to the same problem. concept-branching creates a new design directory that shares the parent's brief but diverges from concept onward. Both versions persist independently.
+**Major version** when you're crossing stages or making structural revisions — updating wireframes after user testing, revising a concept after new constraints surface, or choosing a fundamentally different direction. The previous artifact archives to `archive/{name}-v{n}.md` before the new version writes. Version numbers represent meaningful iterations, not every save.
 
-The key signal: if you're changing the interaction model, the information architecture, or the core assumption about user behavior, that's a branch. If you're adjusting layout, adding a screen, or fixing flow issues, that's a refine.
+**Explore** when you want to develop multiple approaches at concept depth before committing to one. After concept-forming presents its approaches, you can say "explore [Approach Name]" to dig deeper — resolving tensions, sketching rough wireframes, naming behavior risks — without committing. Explorations save to `exploration/{approach-slug}.md`. When you're ready, commit to one and continue the normal flow. This fills the gap between "pick one immediately" and "branch into full parallel pipelines."
+
+**Branch** when you need a structurally different approach to the same problem. concept-branching creates a new design directory that shares the parent's brief but diverges from concept onward. Both versions persist independently. Use this when you want to carry two (or more) directions through wireframing and testing in parallel.
+
+The key signals: if you're tweaking within a stage, refine. If you want to compare approaches before committing, explore. If you're crossing stages or making structural revisions, major version. If you need full parallel pipelines through wireframing and testing, branch.
 
 Branches can't be nested — you can't branch a branch. If the branch itself needs a different direction, branch the original parent instead. This prevents a tree of variants that becomes impossible to track.

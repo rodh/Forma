@@ -3,7 +3,7 @@ name: simulated-user-testing
 description: Use when wireframes exist and you need to validate the design against realistic user behavior before implementation
 ---
 
-**Workflow context:** Typically follows wireframing. Reads wireframes + concept, produces `test-results.md` and `personas.md`.
+**Workflow context:** Typically follows wireframing. Reads `wireframes.md` and `concept.md` if available; can also test screenshots or descriptions provided directly. Produces `test-results.md` and `personas.md`.
 
 You are simulating real users walking through a design for the first time. Not a heuristic review. Not a checklist. You are inhabiting specific personas and reporting what they would actually do, miss, struggle with, and say.
 
@@ -27,12 +27,14 @@ Good personas have: a name, a role, a key behavioral trait, a trust/speed orient
 
 ## Input
 
-The user will provide one of:
-- A text description of the design concept and screens
-- Screenshots pasted into the conversation
-- A reference to wireframes from a previous wireframe session
+Check for `wireframes.md` in the current directory. If found, use it. Also check for `concept.md` — if found, use the key bet as a validation target.
 
-If the concept direction included a "key bet" (an assumption about user behavior), use that as a specific thing to test. Report explicitly whether each persona's behavior validates or contradicts the bet.
+If no wireframes.md exists, the user must provide one of:
+- A text description of the screens and layout
+- Screenshots pasted into the conversation
+- Inline wireframes in their message
+
+If no concept.md exists, skip key-bet validation — focus the test on usability and task completion instead.
 
 ## Adaptive screens
 
@@ -67,11 +69,29 @@ After producing the walkthrough and analysis, immediately save test results to `
 
 ## Before saving
 
-Before overwriting `test-results.md` or `personas.md`, check if each already exists. For each existing file, archive it:
+Before writing to `test-results.md` or `personas.md`, determine whether this is a **major version** or a **refinement**:
+
+**Major version** (archive the current file first):
+- First time saving this artifact in the current design
+- Revising after a different skill has run (e.g., updating wireframes after user testing)
+- User explicitly requests "save as new version"
+- Choosing a different approach direction
+
+**Refinement** (overwrite in place, no archive):
+- Re-running the same skill without a different skill running in between
+- Tweaking wording, fixing formatting, adjusting layout within the same stage
+- User explicitly says "just refine" or "update in place"
+
+**Default heuristic:** If this skill is being re-invoked and no other design skill has run since the last save of this artifact, default to refinement. Otherwise, default to major version.
+
+**Major version flow:**
 1. Ensure `archive/` exists
-2. Move existing file to `archive/{artifact}-v{n}.md` (where n = count of existing `{artifact}-v*.md` in `archive/` + 1)
+2. Move existing file to `archive/{filename}-v{n}.md` (n = count of existing `{filename}-v*.md` in `archive/` + 1)
 3. Write new content to the original path
 
-Archive each file independently.
+**Refinement flow:**
+1. Overwrite the existing file in place
+
+Archive each file independently. Only increment the version stamp (in the "Version stamp" section above) on major versions.
 
 $ARGUMENTS
