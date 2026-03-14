@@ -1,6 +1,6 @@
 ---
 name: rapid-exploring
-description: Use after concept-forming presents approaches to auto-develop all of them to wireframe depth for visual comparison
+description: Use when you want to see all concept-forming approaches materialized to wireframe depth before committing to a direction
 ---
 
 **Workflow context:** Follows concept-forming Step 1. Reads `approaches.md` (required) and `brief.md` (optional). Produces exploration files per approach, then promotes the chosen or combined result to `concept.md` and `wireframes.md`.
@@ -42,12 +42,7 @@ Auto-generated from the approach description and resolved tensions — no user i
 
 ### C. Generate wireframes
 
-Full ASCII wireframes following `wireframe-conventions.md`. These must be production-quality wireframes, not rough sketches:
-- Box-drawing characters: `┌ ─ ┐ │ └ ┘ ├ ┤ ┬ ┴ ┼`
-- Realistic placeholder text referencing the actual domain
-- Proper annotations: `│ // comment` after the right border
-- Labeled screens: `Screen 1: [Name]` with a one-line description
-- State variations where they affect layout or information hierarchy
+Full ASCII wireframes following `wireframe-conventions.md`. These must be production-quality wireframes, not rough sketches.
 
 ### Output per approach
 

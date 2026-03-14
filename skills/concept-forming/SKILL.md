@@ -29,7 +29,20 @@ Present 2-3 approaches. For each: core interaction model (one sentence), what it
 
 Approaches must differ in interaction model, not just UI chrome — different information architectures, different assumptions about user behavior.
 
-After saving approaches, present the choice point:
+Immediately save approaches to `approaches.md` using the "Before saving" archive logic. Each approach should be a labeled section with the approach name as heading, containing the full description. Format:
+
+```markdown
+## Approach A: [Name]
+
+**Core interaction model.** [one sentence]
+
+- **Prioritizes.** ...
+- **Sacrifices.** ...
+- **Wins when.** ...
+- **Struggles when.** ...
+```
+
+Then present the choice point:
 
 > How do you want to proceed?
 > - **Rapid-explore** — auto-develop all approaches to wireframe depth, then compare and combine (recommended)
@@ -47,26 +60,8 @@ If the user says "explore [name]," follow the Exploration mode section below.
 
 If the user says "branch," tell them to invoke the concept-branching skill.
 
-After presenting approaches, immediately save them to `approaches.md` using the "Before saving" archive logic. Each approach should be a labeled section with the approach name as heading, containing the full description. Format:
-
-```markdown
-## Approach A: [Name]
-
-**Core interaction model.** [one sentence]
-
-- **Prioritizes.** ...
-- **Sacrifices.** ...
-- **Wins when.** ...
-- **Struggles when.** ...
-```
-
-This preserves unchosen approaches for the concept-branching skill.
-
 ### Exploration mode (optional)
 
-After presenting approaches and saving to `approaches.md`, the user may say "explore [Approach Name] further" instead of choosing one.
-
-If they do:
 1. Take the named approach and develop it deeper:
    - Resolve its 2-3 key tensions (specific to that approach, not generic UX trade-offs)
    - Sketch 1-2 quick wireframe concepts (inline ASCII, rough — not full wireframing-level detail)
