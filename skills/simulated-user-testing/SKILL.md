@@ -46,9 +46,13 @@ Before testing, scan the wireframe for adaptive elements. If found:
 2. **Label findings as structure or content.** Structure = layout, hierarchy, navigation (same for all). Content = copy, topics, curation (varies per user). State which it is when reporting issues.
 3. **Flag untested personalization.** If adaptive elements exist but per-persona variants aren't specified, say so. Don't silently run all personas against one variant.
 
-## Version stamp
+## Versioning
 
-Start `test-results.md` with: `**Tested against:** wireframes` as the first line, so results trace back to the wireframes they validated.
+Start `test-results.md` with `# Test Results v{N}` where N = previous version + 1 (read the current heading to get the previous number; if no file exists, N = 1). On the next line, add `**Tested against:** wireframes v{M}` (read the version from the `wireframes.md` heading).
+
+Increment the version only when wireframes have changed since the last test run. If re-running tests against the same wireframes, overwrite in place with the same version number.
+
+After saving, append to `design-log.md`: `- **test-results v{N}** — tested wireframes v{M}. [one-line summary of key findings]`
 
 ## Output
 

@@ -27,6 +27,12 @@ Follow conventions in `wireframe-conventions.md` for alignment, spacing, interac
 
 After generating the first wireframes, immediately save them to `wireframes.md`, overwriting in place. Don't wait for the user to say "save" — auto-save every pass.
 
+**Version header:** Start the file with `# Wireframes v{N}` where N = previous version + 1 (read the current heading to get the previous number; if no file exists, N = 1). If revising after user testing, add `**Addressing:** test-results v{M}` on the next line (read the version from the `test-results.md` heading).
+
+Increment the version only when a different skill has run since the last save. If iterating within the same wireframing session, overwrite in place with the same version number.
+
+After saving a new version, append to `design-log.md`: `- **wireframes v{N}** — [one-line summary of what changed and why]`. If addressing test results, include that: `- **wireframes v3** — addressing test-results v2: moved CTA above fold, simplified batch action flow`
+
 ## Iteration
 
 After the first pass, the user will direct changes. Common patterns:

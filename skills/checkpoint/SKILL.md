@@ -45,7 +45,9 @@ Print an **"Existing artifacts"** heading, then a markdown table with `File` and
 | wireframes.md | 4 screens: cart summary, shipping, payment, confirmation. Payment screen has two variants. |
 ```
 
-If both `test-results.md` and `wireframes.md` exist, check the version stamp at the top of `test-results.md` (format: `**Tested against:** wireframes v{N}`). Compare it to the current wireframe version (count of `wireframes-v*.md` in `archive/` + 1). If the test results were tested against an older version, note this in the current state summary — e.g., "Test results are from wireframes v2 (current wireframes are v3) — consider re-testing." Also note how many items appear under "Remaining issues" and "New findings."
+If both `test-results.md` and `wireframes.md` exist, read the version from each file's heading (`# Wireframes v{N}`, `# Test Results v{M}`). Check the `**Tested against:** wireframes v{X}` line in test-results.md. If the wireframes version is newer than what was tested, note this — e.g., "Test results are from wireframes v2 (current wireframes are v3) — consider re-testing." Also note how many items appear under "Remaining issues" and "New findings."
+
+If `design-log.md` exists, read it and include a brief summary of the iteration history in the status report.
 
 After the table, print a line listing what's **missing** — name each missing artifact file explicitly.
 
@@ -90,7 +92,7 @@ When saving outputs, use these names:
 - wireframing → `wireframes.md`
 - simulated-user-testing → `test-results.md` and `personas.md`
 - recap → `sessions/YYYY-MM-DD-HHMM.md`
-- Artifact snapshots → `archive/{artifact}-v{n}.md`
+- Iteration history → `design-log.md`
 
 ## Rules
 
