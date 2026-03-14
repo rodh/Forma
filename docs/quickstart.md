@@ -8,7 +8,7 @@ Pick the scenario that matches your task. Follow the skills in order. Skip what 
 
 ## New idea from scratch
 
-**Pattern:** design-briefing → concept-forming → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → simulated-user-testing
 
 ```
 mkdir my-app && cd my-app
@@ -19,6 +19,8 @@ on Reddit, YouTube, LinkedIn — but I never go back to it. I want something
 that captures content fast, organizes it with AI, and helps me use it later.
 
 /concept-forming
+
+/rapid-exploring
 
 /wireframing home screen, save flow, topic briefing
 
@@ -60,9 +62,9 @@ Skip concept-forming if the direction is obvious (e.g., "add sort options to a l
 
 ### Feature modification
 
-**Pattern:** design-briefing → concept-forming → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → simulated-user-testing
 
-Run the full workflow — you're rethinking the approach.
+Run the full workflow — you're rethinking the approach. Rapid-exploring auto-develops all concept directions to wireframe depth so you can compare visually before committing.
 
 ---
 
