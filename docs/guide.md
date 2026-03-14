@@ -67,7 +67,7 @@ Skills don't generate output in one shot. Most open a conversation — presentin
 
 The system reconstructs context from artifacts, not conversation history. When you run checkpoint in a directory with existing artifacts, it reads every artifact, detects the current stage, and orients you.
 
-Artifacts carry the decisions. Session recaps (recap) carry the thinking between artifacts. Auto-archive preserves iteration history. Resumption isn't a special feature — it's a side effect of how the system already works.
+Artifacts carry the decisions. Session recaps (recap) carry the thinking between artifacts. Git history preserves iteration history. Resumption isn't a special feature — it's a side effect of how the system already works.
 
 ---
 

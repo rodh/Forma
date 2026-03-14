@@ -48,9 +48,7 @@ Before testing, scan the wireframe for adaptive elements. If found:
 
 ## Version stamp
 
-Before running the walkthrough:
-1. Count `wireframes-v*.md` in `archive/` + 1 (if no archives, version is 1).
-2. Start `test-results.md` with: `**Tested against:** wireframes v{N}` as the first line.
+Start `test-results.md` with: `**Tested against:** wireframes` as the first line, so results trace back to the wireframes they validated.
 
 ## Output
 
@@ -65,33 +63,6 @@ Follow the output format in `test-output-format.md` for walkthrough structure, a
 - Don't soften the findings. If the design has a fundamental problem, say it directly.
 - Flag when iteration stops producing improvements.
 
-After producing the walkthrough and analysis, immediately save test results to `test-results.md` (and `personas.md` if generated) using the "Before saving" archive logic below.
-
-## Before saving
-
-Before writing to `test-results.md` or `personas.md`, determine whether this is a **major version** or a **refinement**:
-
-**Major version** (archive the current file first):
-- First time saving this artifact in the current design
-- Revising after a different skill has run (e.g., updating wireframes after user testing)
-- User explicitly requests "save as new version"
-- Choosing a different approach direction
-
-**Refinement** (overwrite in place, no archive):
-- Re-running the same skill without a different skill running in between
-- Tweaking wording, fixing formatting, adjusting layout within the same stage
-- User explicitly says "just refine" or "update in place"
-
-**Default heuristic:** If this skill is being re-invoked and no other design skill has run since the last save of this artifact, default to refinement. Otherwise, default to major version.
-
-**Major version flow:**
-1. Ensure `archive/` exists
-2. Move existing file to `archive/{filename}-v{n}.md` (n = count of existing `{filename}-v*.md` in `archive/` + 1)
-3. Write new content to the original path
-
-**Refinement flow:**
-1. Overwrite the existing file in place
-
-Archive each file independently. Only increment the version stamp (in the "Version stamp" section above) on major versions.
+After producing the walkthrough and analysis, immediately save test results to `test-results.md` (and `personas.md` if generated), overwriting in place.
 
 $ARGUMENTS

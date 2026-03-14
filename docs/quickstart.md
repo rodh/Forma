@@ -95,7 +95,7 @@ Never skip design-briefing. Even simple fixes benefit from a clear brief.
 
 ## Good to know
 
-**Auto-save.** All skills save their output immediately. If an artifact already exists, the previous version is archived to `archive/` with a version number before the new version overwrites it.
+**Auto-save.** All skills save their output immediately, overwriting in place. Git tracks version history.
 
 **Any skill can be the entry point.** checkpoint is optional — run design-briefing directly if you don't need the status check.
 

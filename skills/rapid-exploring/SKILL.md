@@ -88,7 +88,7 @@ Then ask: "Which elements do you want to keep from each? Describe the combinatio
 
 **If the user describes a combination:** Generate a combined wireframe incorporating the specified elements, plus a synthesized concept direction that reflects the hybrid. Present both for approval before promoting.
 
-Promote the final result to `concept.md` and `wireframes.md` using the "Before saving" archive logic below.
+Promote the final result to `concept.md` and `wireframes.md`, overwriting in place.
 
 ## Rules
 
@@ -96,33 +96,4 @@ Promote the final result to `concept.md` and `wireframes.md` using the "Before s
 - Wireframes must meet wireframing skill quality standard — full ASCII with box-drawing characters, realistic placeholders, labeled screens, state variations where relevant. Not rough sketches.
 - Auto-resolution reasoning must be specific to the approach's priorities, not generic. "This approach prioritizes speed, so we resolve toward fewer steps" is specific. "Users generally prefer simplicity" is generic.
 - Document every autonomous decision. The user didn't make these choices — they need to see exactly what was decided and why.
-- Exploration files overwrite in place (working documents). Only `concept.md` and `wireframes.md` follow versioned archive logic.
-
-## Before saving
-
-**Exploration files** (`exploration/{approach-slug}.md`): Overwrite in place. These are working documents, not versioned artifacts.
-
-**Promoted files** (`concept.md` and `wireframes.md`): Before writing, determine whether this is a **major version** or a **refinement**:
-
-**Major version** (archive the current file first):
-- First time saving this artifact in the current design
-- Revising after a different skill has run (e.g., updating wireframes after user testing)
-- User explicitly requests "save as new version"
-- Choosing a different approach direction
-
-**Refinement** (overwrite in place, no archive):
-- Re-running the same skill without a different skill running in between
-- Tweaking wording, fixing formatting, adjusting layout within the same stage
-- User explicitly says "just refine" or "update in place"
-
-**Default heuristic:** If this skill is being re-invoked and no other design skill has run since the last save of this artifact, default to refinement. Otherwise, default to major version.
-
-**Major version flow:**
-1. Ensure `archive/` exists
-2. Move existing file to `archive/{filename}-v{n}.md` (n = count of existing `{filename}-v*.md` in `archive/` + 1)
-3. Write new content to the original path
-
-**Refinement flow:**
-1. Overwrite the existing file in place
-
 $ARGUMENTS

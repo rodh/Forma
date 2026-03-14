@@ -25,7 +25,7 @@ Follow conventions in `wireframe-conventions.md` for alignment, spacing, interac
 
 **States:** Show relevant state variations — empty, loaded, error, loading — as separate wireframes. Don't show every possible state, just the ones that affect layout or information hierarchy.
 
-After generating the first wireframes, immediately save them to `wireframes.md` using the "Before saving" archive logic below. Don't wait for the user to say "save" — auto-save every pass.
+After generating the first wireframes, immediately save them to `wireframes.md`, overwriting in place. Don't wait for the user to say "save" — auto-save every pass.
 
 ## Iteration
 
@@ -37,7 +37,7 @@ After the first pass, the user will direct changes. Common patterns:
 - "What happens when they click [element]?" → show the next screen in the flow
 - "Add a filter panel" → show expanded and collapsed states
 
-After each iteration round, save the updated wireframes to `wireframes.md` — the "Before saving" archive logic will snapshot the previous version automatically.
+After each iteration round, save the updated wireframes to `wireframes.md`, overwriting in place.
 
 Stay in ASCII. If you think the structure is solid after 2-3 rounds, you can say "This feels structurally stable — ready for user testing, or do you want to keep iterating?"
 
@@ -51,34 +51,5 @@ Stay in ASCII. If you think the structure is solid after 2-3 rounds, you can say
 - If the user asks for something that contradicts the concept direction from the concept-forming skill, flag the contradiction.
 - Labeled bullets for facts/constraints; prose for opinions/narratives.
 - Flag when iteration stops producing improvements.
-
-## Before saving
-
-Before writing to `wireframes.md`, determine whether this is a **major version** or a **refinement**:
-
-**Major version** (archive the current file first):
-- First time saving this artifact in the current design
-- Revising after a different skill has run (e.g., updating wireframes after user testing)
-- User explicitly requests "save as new version"
-- Choosing a different approach direction
-
-**Refinement** (overwrite in place, no archive):
-- Re-running the same skill without a different skill running in between
-- Tweaking wording, fixing formatting, adjusting layout within the same stage
-- User explicitly says "just refine" or "update in place"
-
-**Default heuristic:** If this skill is being re-invoked and no other design skill has run since the last save of this artifact, default to refinement. Otherwise, default to major version.
-
-**Major version flow:**
-1. Ensure `archive/` exists
-2. Move existing file to `archive/{filename}-v{n}.md` (n = count of existing `{filename}-v*.md` in `archive/` + 1)
-3. Write new content to the original path
-
-**Refinement flow:**
-1. Overwrite the existing file in place
-
-**On major versions only:**
-- Start the file with `# Wireframes v{N}: [Concept Name]` where N = archive count + 1 (if no archives, N = 1). This heading is mandatory — never omit it.
-- If this version addresses findings from user testing, add `**Addressing:** test-results v{M}` on the line after the heading (where M = the test-results version that prompted changes). Omit this line for the first wireframe pass.
 
 $ARGUMENTS
