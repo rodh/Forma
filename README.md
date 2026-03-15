@@ -23,80 +23,89 @@ It runs as an opinionated workflow: each stage produces a persistent artifact th
   [STASH-92.md]  [topics-screen-current.png]
 
   Teams need to be notified when a teammate saves content to a shared
-  topic. Currently saves are silent — teammates only discover new content
-  when they open the topic. Want push + in-app notifications with controls
-  to avoid noise.
+  topic. Currently saves are silent. Want push + in-app notifications
+  with controls to avoid noise.
 
-  agent: Reading ticket and screenshot...
+  Before drafting — two questions:
+  - Per-topic mute, global quiet hours, or both?
+  - All shared topics notify by default, or opt-in?
 
-  Before drafting — a few things to clarify:
-  - The ticket says "controls to avoid noise" but doesn't specify scope.
-    Per-topic mute? Global quiet hours? Both?
-  - Should all shared topics notify by default, or only ones the user
-    explicitly follows?
-
-> Per-topic mute only — keep it simple. All shared topics notify by default,
-  following is opt-out not opt-in.
-
-  Clear.
+> Per-topic mute only. Default on, opt-out.
 
   ✓ Brief saved → brief.md
-  Problem: shared saves are invisible. Users miss teammate contributions.
-  Key constraint: notification fatigue — per-topic mute, not global.
-  Open question: notification grouping when a teammate saves multiple items quickly.
 
 > /concept-forming
 
   Three directions:
 
-  A. Activity feed — passive. A "what's new" tab per shared topic.
-     Prioritizes: low interruption. Sacrifices: timeliness.
-  B. Smart digest — batched. Daily/weekly summary of shared topic activity.
-     Prioritizes: noise control. Sacrifices: real-time awareness.
-  C. Notify-on-save — active. Push + in-app per save, with per-topic mute.
-     Prioritizes: immediacy. Sacrifices: quiet if team is active.
+  A. Activity feed — passive tab per topic.
+     Low interruption, low timeliness.
+  B. Smart digest — batched summary.
+     Quiet, but delays awareness by hours.
+  C. Notify-on-save — push per save, per-topic mute.
+     Immediate, but noisier.
 
   Which direction, or push back?
 
-> C, but I want the mute controls to be really prominent — not buried in settings
+> Explore all three
 
-  ✓ Concept saved → concept.md
+  Developing all approaches to wireframe depth...
+
+  ✓ Three approaches developed → exploration/
+
+  Comparison: A and B are pull-based — user checks for updates.
+  C is push-based — updates come to the user.
+
+  A: New "Activity" tab            C: Inline notification banner
+  ┌───────────────────────┐        ┌───────────────────────┐
+  │ Design Systems        │        │ ┌───────────────────┐ │
+  │ [Saves] [Activity]    │        │ │ Sarah saved "Q3   │ │
+  │ ┌───────────────────┐ │        │ │ OKRs" [Mute▾] [x] │ │
+  │ │ Sarah: Q3 OKRs    │ │        │ │ [View]             │ │
+  │ │ 2h ago            │ │        │ └───────────────────┘ │
+  │ │ James: Brand doc  │ │        │ ★ Design Systems  (3) │
+  │ │ yesterday         │ │        │   Product Research (1)│
+  │ └───────────────────┘ │        │   Brand Guidelines    │
+  └───────────────────────┘        └───────────────────────┘
+
+  Which elements do you want to keep, or pick one outright?
+
+> C — mute controls inline is exactly right
+
+  ✓ Concept + wireframes promoted → concept.md, wireframes.md
   Direction: notify-on-save with inline mute controls.
-  Key bet: users will manage noise themselves if controls are within reach.
+  Key bet: users will manage noise themselves if controls are
+  within reach.
 
-> /wireframing notification banner, topic screen with mute toggle, notification center
+> /user-testing
+
+  3 personas walked through the design independently.
+  Consensus issue: mute toggle is discoverable but "mute duration"
+  isn't — all 3 expected a way to mute temporarily, not just on/off.
+  Recommendation: add a duration picker (1h, 1d, forever) to the
+  mute action.
+
+  ✓ Test results saved → test-results.md
+
+> /wireframing fix the mute duration issue
 
   ┌──────────────────────────────────┐
-  │ Topics                       [≡] │
   │ ┌──────────────────────────────┐ │
   │ │ Sarah saved "Q3 OKRs"        │ │
   │ │ to Design Systems       [x]  │ │
-  │ │  [View]  [Mute topic ▾]      │ │
+  │ │  [View]  [Mute ▾]            │ │
+  │ │  ┌─────────────────────┐     │ │
+  │ │  │ Mute for 1 hour     │     │ │
+  │ │  │ Mute for 1 day      │     │ │
+  │ │  │ Mute forever        │     │ │
+  │ │  └─────────────────────┘     │ │
   │ └──────────────────────────────┘ │
   │  ★ Design Systems            (3) │
   │    Product Research          (1) │
   │    Brand Guidelines              │
   └──────────────────────────────────┘
 
-  Mute toggle is on the banner itself — no settings detour.
-  Notification center and other screens also drafted.
-
-  Banner should push the list down, not overlay it.
-
-> Right — update to push layout instead of overlay
-
-  [revised wireframes with push layout]
-
   ✓ Wireframes saved → wireframes.md
-
-> /user-testing
-
-  3 personas walked through the design independently.
-  Consensus issue: mute toggle is discoverable but "mute duration" isn't —
-  all 3 personas expected a way to mute temporarily, not just on/off.
-  Recommendation: add a duration picker (1h, 1d, forever) to the mute action.
-
-  ✓ Test results saved → test-results.md
 ```
 
 ## Try it
