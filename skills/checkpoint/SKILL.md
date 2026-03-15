@@ -59,7 +59,7 @@ Then print a `> **Next up:**` blockquote recommending the logical next step base
 - **New** → "Start with design-briefing to create a brief."
 - **Has brief** → "Move to concept-forming to explore approaches."
 - **Has concept** → "Move to wireframing to make it concrete."
-- **Has wireframes** → "Move to simulated-user-testing to validate the design."
+- **Has wireframes** → "Move to user-testing to validate the design."
 - **Has test results** → Read the test results and recommend based on what they say: another wireframe iteration if unresolved issues remain, or prototyping if the design tested well.
 
 Present the user with a "Where do you want to pick up?" question with options based on what exists.
@@ -90,7 +90,7 @@ When saving outputs, use these names:
 - design-briefing → `brief.md`
 - concept-forming → `concept.md`
 - wireframing → `wireframes.md`
-- simulated-user-testing → `test-results.md` and `personas.md`
+- user-testing → `test-results.md` and `personas.md`
 - recap → `sessions/YYYY-MM-DD-HHMM.md`
 - Iteration history → `design-log.md`
 

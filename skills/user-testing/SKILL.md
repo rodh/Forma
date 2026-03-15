@@ -1,5 +1,5 @@
 ---
-name: simulated-user-testing
+name: user-testing
 description: Use when wireframes exist and you need to validate the design against realistic user behavior before implementation
 ---
 

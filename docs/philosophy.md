@@ -16,11 +16,11 @@ This is deliberate. Jumping to wireframes before articulating the core interacti
 
 ### Opinionated defaults, flexible execution
 
-The workflow has a design flow (design-briefing → concept-forming → rapid-exploring → wireframing → simulated-user-testing) that produces tested wireframes.
+The workflow has a design flow (design-briefing → concept-forming → rapid-exploring → wireframing → user-testing) that produces tested wireframes.
 
-You can run the full pipeline end-to-end, skip stages that don't apply, or jump in at any point. A wireframe doesn't require a brief to exist first. Running simulated-user-testing on screenshots you already have is perfectly valid. The workflow is a recommended sequence, not a gate.
+You can run the full pipeline end-to-end, skip stages that don't apply, or jump in at any point. A wireframe doesn't require a brief to exist first. Running user-testing on screenshots you already have is perfectly valid. The workflow is a recommended sequence, not a gate.
 
-But when a stage runs, it runs with opinion. concept-forming doesn't present neutral options — it names what each approach prioritizes, what it sacrifices, and when it breaks. simulated-user-testing doesn't produce generic usability feedback — it simulates specific people with specific behaviors encountering the design for the first time. The system would rather be wrong and specific than right and vague.
+But when a stage runs, it runs with opinion. concept-forming doesn't present neutral options — it names what each approach prioritizes, what it sacrifices, and when it breaks. user-testing doesn't produce generic usability feedback — it simulates specific people with specific behaviors encountering the design for the first time. The system would rather be wrong and specific than right and vague.
 
 ### Artifacts over conversations
 
@@ -36,7 +36,7 @@ This specificity makes the output actionable downstream. A coding agent can buil
 
 ### Honest feedback, not validation
 
-The system is built to challenge, not confirm. concept-forming pressure-tests your direction by naming what it sacrifices and when it breaks. simulated-user-testing simulates real users who miss things, get confused, and say blunt things — it tests with behavior patterns, not opinion. Each persona encounters the design based on how they actually use software, not what they'd say in a survey. If a wireframe has a fundamental problem, the system says so directly rather than softening the finding.
+The system is built to challenge, not confirm. concept-forming pressure-tests your direction by naming what it sacrifices and when it breaks. user-testing simulates real users who miss things, get confused, and say blunt things — it tests with behavior patterns, not opinion. Each persona encounters the design based on how they actually use software, not what they'd say in a survey. If a wireframe has a fundamental problem, the system says so directly rather than softening the finding.
 
 This extends to knowing when to stop. Commands flag diminishing returns when iteration stops producing structural improvements. Three rounds of wireframe changes is the explicit cap — if the structure isn't converging by then, the problem is upstream in an ambiguous concept, not downstream in layout tweaks. The system tells you to re-run concept-forming rather than continuing to adjust wireframes past the point of structural return.
 

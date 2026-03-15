@@ -8,7 +8,7 @@ Pick the scenario that matches your task. Follow the skills in order. Skip what 
 
 ## New idea from scratch
 
-**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → user-testing
 
 ```
 mkdir my-app && cd my-app
@@ -24,7 +24,7 @@ that captures content fast, organizes it with AI, and helps me use it later.
 
 /wireframing home screen, save flow, topic briefing
 
-/simulated-user-testing
+/user-testing
 ```
 
 ---
@@ -33,7 +33,7 @@ that captures content fast, organizes it with AI, and helps me use it later.
 
 ### Bug fix (visual/UI)
 
-**Pattern:** design-briefing → wireframing → optional simulated-user-testing
+**Pattern:** design-briefing → wireframing → optional user-testing
 
 Skip concept-forming — the problem and solution space are narrow enough to go straight to wireframing.
 
@@ -50,19 +50,19 @@ timer and make the undo target clearly tappable.
 
 ### Bug fix (behavioral/logic)
 
-**Pattern:** design-briefing → wireframing → simulated-user-testing
+**Pattern:** design-briefing → wireframing → user-testing
 
-Always run simulated-user-testing — behavioral bugs affect task completion.
+Always run user-testing — behavioral bugs affect task completion.
 
 ### Feature iteration
 
-**Pattern:** design-briefing → optional concept-forming → wireframing → simulated-user-testing
+**Pattern:** design-briefing → optional concept-forming → wireframing → user-testing
 
 Skip concept-forming if the direction is obvious (e.g., "add sort options to a list").
 
 ### Feature modification
 
-**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → user-testing
 
 Run the full workflow — you're rethinking the approach. Rapid-exploring auto-develops all concept directions to wireframe depth so you can compare visually before committing.
 
@@ -86,7 +86,7 @@ Or use checkpoint with a name argument to create a named subdirectory and work f
 | Stage | Safe to skip when |
 |---|---|
 | concept-forming | Direction is obvious. Bug fixes, minor iterations, well-defined tickets. |
-| simulated-user-testing | Change is cosmetic, low-risk, doesn't affect task completion. |
+| user-testing | Change is cosmetic, low-risk, doesn't affect task completion. |
 | recap | Session was straightforward, no decisions worth preserving. |
 
 Never skip design-briefing. Even simple fixes benefit from a clear brief.

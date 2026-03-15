@@ -160,12 +160,12 @@ git commit -m "Update guide to show rapid-exploring as recommended step after co
 
 Find:
 ```markdown
-**Pattern:** design-briefing → concept-forming → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → wireframing → user-testing
 ```
 
 Replace with:
 ```markdown
-**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → user-testing
 ```
 
 **Step 2: Update the example command sequence**
@@ -181,7 +181,7 @@ that captures content fast, organizes it with AI, and helps me use it later.
 
 /wireframing home screen, save flow, topic briefing
 
-/simulated-user-testing
+/user-testing
 ```
 
 Replace with:
@@ -197,7 +197,7 @@ that captures content fast, organizes it with AI, and helps me use it later.
 
 /wireframing home screen, save flow, topic briefing
 
-/simulated-user-testing
+/user-testing
 ```
 
 Note: wireframing is still shown because the user may want to iterate on the wireframes that rapid-exploring promoted — rapid-exploring produces wireframes but they may need refinement.
@@ -208,7 +208,7 @@ Find:
 ```markdown
 ### Feature modification
 
-**Pattern:** design-briefing → concept-forming → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → wireframing → user-testing
 
 Run the full workflow — you're rethinking the approach.
 ```
@@ -217,7 +217,7 @@ Replace with:
 ```markdown
 ### Feature modification
 
-**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → simulated-user-testing
+**Pattern:** design-briefing → concept-forming → rapid-exploring → wireframing → user-testing
 
 Run the full workflow — you're rethinking the approach. Rapid-exploring auto-develops all concept directions to wireframe depth so you can compare visually before committing.
 ```
