@@ -94,33 +94,10 @@ $user-testing [screenshot.png]
 
 > Explore all three.
 
-  A: New "Activity" tab            C: Inline notification banner
-  ┌───────────────────────┐        ┌───────────────────────┐
-  │ Design Systems        │        │ ┌───────────────────┐ │
-  │ [Saves] [Activity]    │        │ │ Sarah saved "Q3   │ │
-  │ ┌───────────────────┐ │        │ │ OKRs" [Mute▾] [x] │ │
-  │ │ Sarah: Q3 OKRs    │ │        │ │ [View]             │ │
-  │ │ 2h ago            │ │        │ └───────────────────┘ │
-  │ │ James: Brand doc  │ │        │ ★ Design Systems  (3) │
-  │ │ yesterday         │ │        │   Product Research (1)│
-  │ └───────────────────┘ │        │   Brand Guidelines    │
-  └───────────────────────┘        └───────────────────────┘
-
-  B: Daily digest notification
-  ┌───────────────────────┐
-  │ Today's Activity      │
-  │ ┌───────────────────┐ │
-  │ │ Design Systems    │ │
-  │ │ 3 new saves today │ │
-  │ │ Product Research  │ │
-  │ │ 1 new save today  │ │
-  │ └───────────────────┘ │
-  └───────────────────────┘
+  All three developed to wireframe depth → exploration/
 
   A and B are pull-based — user checks for updates.
   C is push-based — updates come to the user.
-
-  ✓ All three developed → exploration/
 
 > C — mute controls inline is exactly right.
 
@@ -139,61 +116,11 @@ $user-testing [screenshot.png]
   mute action.
 
   ✓ Test results saved → test-results.md
-
-
-▶ /wireframing fix the mute duration issue
-
-  ┌──────────────────────────────────┐
-  │ ┌──────────────────────────────┐ │
-  │ │ Sarah saved "Q3 OKRs"        │ │
-  │ │ to Design Systems       [x]  │ │
-  │ │  [View]  [Mute ▾]            │ │
-  │ │  ┌─────────────────────────┐ │ │
-  │ │  │ Mute for 1 hour        │ │ │
-  │ │  │ Mute for 1 day         │ │ │
-  │ │  │ Mute forever           │ │ │
-  │ │  └─────────────────────────┘ │ │
-  │ └──────────────────────────────┘ │
-  │  ★ Design Systems            (3) │
-  │    Product Research          (1) │
-  │    Brand Guidelines              │
-  └──────────────────────────────────┘
-
-  ✓ Wireframes updated → wireframes.md
-
-
-▶ /user-testing
-
-  3 personas re-tested the updated wireframe.
-  No critical issues. Minor: consider "Unmute" confirmation.
-
-  ✓ Test results saved → test-results-r2.md
-
-  This cycle repeats as needed:
-
-           │
-           ▼
-  ┌─────────────────┐◄──────────────┐
-  │  wireframing     │               │
-  └────────┬────────┘               │
-           ▼                        │
-  ┌─────────────────┐    ┌─────────┴───────┐
-  │  user-testing    │───►│ Issues found?   │
-  └────────┬────────┘    │ Refine & retest │
-           │              └─────────────────┘
-           │ (passes)
-           ▼
-  ┌─────────────────────────────────┐
-  │ Ready to implement              │
-  │ → Hand off to your build tools  │
-  └─────────────────────────────────┘
 ```
 
 ## Learn more
 
-- [Quick start](docs/quickstart.md) — scenario-based examples for different project types
-- [Guide](docs/guide.md) — the full workflow in depth
-- [Philosophy](docs/philosophy.md) — why design practice matters for AI agents
+[Guide](docs/guide.md) — scenario patterns, design principles, and the full workflow
 
 ## License
 

@@ -2,68 +2,144 @@
 
 Forma is a design toolkit for rapid iteration — a set of skills that give your coding agent a design practice. It optimizes for decisions, not pixels — each stage forces a commitment before the next one begins.
 
-For usage patterns and examples, see the [Quick Start](quickstart.md).
-
 ---
 
 ## How the stages connect
 
 Each skill reads the previous stage's artifact, does its work through dialogue or structured processing, and writes a file to the current directory.
 
-**Design briefing** opens a dialogue with you to distill messy input into a problem statement, constraints, known context, open questions, and an opinionated first instinct. It asks clarifying questions one at a time — probing for gaps, surfacing ambiguity, and testing assumptions — before synthesizing the brief. This is the foundation everything else builds on.
+**Design briefing** opens a dialogue to distill messy input into a problem statement, constraints, known context, open questions, and an opinionated first instinct. It asks clarifying questions one at a time — probing gaps, surfacing ambiguity, testing assumptions — before synthesizing the brief.
 
-**Concept forming** explores the solution space. It presents genuinely different approaches — not three flavors of the same idea, but different interaction models with different trade-offs. Then it auto-develops all approaches to wireframe depth — resolving tensions autonomously, generating concept directions and full ASCII wireframes for each — and presents a comparison summary so you can pick one or combine elements from several. The result promotes to `concept.md` and `wireframes.md`. If you already know which approach you want, name it directly and the skill develops it through dialogue instead.
+**Concept forming** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to wireframe depth. You compare the materialized approaches and pick one or combine elements from several. The result promotes to `concept.md` and `wireframes.md`.
 
-**User testing** runs simulated usability walkthroughs with behavioral personas (generated from the brief, provided by you, or loaded from `personas.md` in the project directory). Each persona encounters the design independently, reacts based on their specific behavior patterns, and surfaces friction that generic review misses. Results include consensus issues, a highest-leverage fix recommendation, and an explicit check against the concept's key bet. After concept-forming produces initial wireframes, run user-testing to validate them. Issues found feed back into wireframing for fixes.
+**User testing** runs simulated usability walkthroughs with behavioral personas (generated from the brief, provided by you, or loaded from `personas.md`). Each persona encounters the design independently and surfaces friction that generic review misses. Results include consensus issues, a highest-leverage fix, and a check against the concept's key bet.
 
-**Wireframing** translates or refines screen structure using ASCII art. After concept-forming produces initial wireframes, wireframing handles iteration — fixing issues surfaced by user-testing, adjusting layout, adding screens. The constraint of ASCII keeps the focus on information architecture and interaction flow rather than visual polish. Iteration is capped at three rounds — if the structure isn't stable by then, the problem is in the concept, not the layout. Wireframing and user-testing form an iteration loop: fix issues, retest, repeat until stable.
+**Wireframing** translates or refines screen structure using ASCII art. After concept-forming produces initial wireframes, wireframing handles iteration — fixing issues from user-testing, adjusting layout, adding screens. Wireframing and user-testing form a loop: fix issues, retest, repeat until stable. Iteration caps at three rounds.
 
 ---
 
 ## What you can brief
 
-The design-briefing stage is deliberately format-agnostic. The agent expects messy, incomplete, mixed-abstraction input — that's the whole point. Here's what works:
+Design-briefing accepts any messy input — tickets, Slack threads, screenshots, PRDs, user feedback, analytics, sketches, competitor UI, meeting transcripts, personal observations. Combine them freely. A typical briefing might include a Jira ticket, two Slack messages that add context the ticket missed, and a note about what you noticed trying the current flow. Thin input produces thin briefs.
 
-- **Tickets and tasks.** Jira tickets, Linear issues, GitHub issues, Trello cards. Structured or not — design-briefing extracts the problem statement and constraints from whatever format they're in.
-- **Conversations.** Slack threads, Discord messages, email chains, meeting transcripts. The back-and-forth often contains the real requirements buried in debate and context-switching.
-- **Product documents.** PRDs, one-pagers, strategy decks (pasted as text), roadmap excerpts. Partial documents work fine — the agent identifies what's covered and flags what's missing.
-- **User feedback.** Customer verbatims, support tickets, NPS comments, app store reviews, user interview notes. Direct quotes are especially useful because they ground the brief in real language rather than abstracted requirements.
-- **Data and metrics.** Analytics summaries, funnel drop-off numbers, heatmap observations, A/B test results. Quantitative context helps the brief distinguish between "users say they want X" and "users actually do Y."
-- **Visual references.** Screenshots, photos of whiteboards, existing wireframes, mockups, competitor UI screenshots, sketches on paper. Images are first-class input — the agent reads them directly and extracts layout patterns, interaction cues, and visual hierarchy into the brief.
-- **Existing UI.** Descriptions of current screens, component inventories, design system audit notes. Useful when the design task is modifying something that already exists.
-- **Personal observations.** "I keep running into this problem" or "every time I try to do X, the app makes me do Y first." A frustration described in your own words is a perfectly valid starting point.
+---
 
-You can combine these freely. A typical briefing might include a Jira ticket, two Slack messages that add context the ticket missed, and a note about what you noticed when you tried the current flow yourself. Design-briefing sorts it out — extracting the problem, inferring constraints, identifying gaps, and producing a structured brief that downstream stages can build on.
+## Scenario patterns
 
-The key design choice: design-briefing would rather you paste in too much raw context than too little. Thin input produces thin briefs. When the context is genuinely sparse, the brief says so explicitly — it names what's missing rather than padding with assumptions.
+> **Platform syntax:** Claude Code uses `/skill-name`, Codex CLI uses `$skill-name`. This guide uses plain skill names — adapt to your platform.
+
+Pick the scenario that matches your task. Follow the skills in order. Skip what doesn't apply.
+
+### New idea from scratch
+
+**Pattern:** design-briefing → concept-forming → user-testing → [wireframing ↔ user-testing]
+
+```
+mkdir my-app && cd my-app
+
+/design-briefing
+I want to build a personal content saving app. I keep finding useful stuff
+on Reddit, YouTube, LinkedIn — but I never go back to it. I want something
+that captures content fast, organizes it with AI, and helps me use it later.
+
+/concept-forming
+
+/user-testing
+
+/wireframing (fix issues from testing)
+
+/user-testing (retest)
+```
+
+### Bug fix (visual/UI)
+
+**Pattern:** design-briefing → wireframing → optional user-testing
+
+Skip concept-forming — the problem and solution space are narrow enough to go straight to wireframing.
+
+### Bug fix (behavioral/logic)
+
+**Pattern:** design-briefing → wireframing → user-testing
+
+Always run user-testing — behavioral bugs affect task completion.
+
+### Feature iteration
+
+**Pattern:** design-briefing → optional concept-forming → wireframing → user-testing
+
+Skip concept-forming if the direction is obvious (e.g., "add sort options to a list").
+
+### Feature modification
+
+**Pattern:** design-briefing → concept-forming → user-testing → [wireframing ↔ user-testing]
+
+Run the full workflow — you're rethinking the approach. Concept-forming auto-develops all directions to wireframe depth so you can compare visually before committing.
+
+### Resuming work
+
+Run checkpoint with no arguments in a directory with design artifacts. It shows existing artifacts, missing artifacts, session context from the most recent recap, and options to continue or advance. Or use checkpoint with a name argument to create a named subdirectory.
+
+### Skipping stages
+
+| Stage | Safe to skip when |
+|---|---|
+| concept-forming | Direction is obvious. Bug fixes, minor iterations, well-defined tickets. |
+| user-testing | Change is cosmetic, low-risk, doesn't affect task completion. |
+| recap | Session was straightforward, no decisions worth preserving. |
+
+Never skip design-briefing. Even simple fixes benefit from a clear brief.
+
+### Good to know
+
+**Auto-save.** All skills save their output immediately, overwriting in place. Git tracks version history.
+
+**Any skill can be the entry point.** checkpoint is optional — run design-briefing directly if you don't need the status check.
+
+**Flat directory model.** Skills operate on the current working directory. No required project structure — just `cd` into a directory and start.
 
 ---
 
 ## Dialogue patterns
 
-Skills don't generate output in one shot. Most open a conversation — presenting options or structure, incorporating your reactions, and converging on a final artifact. Understanding which skills work which way helps you calibrate how much to engage at each stage.
+Skills don't generate output in one shot. Most open a conversation — presenting options, incorporating your reactions, and converging on a final artifact.
 
-**Three interaction modes:**
+**Absorb.** Some skills take input and produce output without back-and-forth. User testing runs persona walkthroughs against your wireframes. Recap captures session thinking. You give the agent material, it processes it, done.
 
-**Absorb.** Some skills take input and produce output without back-and-forth. User testing runs persona walkthroughs against your wireframes. Recap captures session thinking. Checkpoint reads artifacts and orients you. You give the agent material, it processes it, done. These skills are transactional — the quality of the output depends on the quality of the input, not on mid-process conversation.
+**Dialogue + autonomy.** Design-briefing and concept-forming open with structured engagement. Design-briefing asks clarifying questions before drafting. Concept-forming presents approaches with trade-offs, then auto-develops all of them — you re-engage to compare, combine, and commit. Challenge an option and the agent rethinks rather than defends. Reject everything and it asks what's wrong — usually revealing a requirement that wasn't in the brief.
 
-**Dialogue + autonomy.** Design-briefing and concept-forming open with structured engagement and expect you to react. Design-briefing asks clarifying questions one at a time before drafting the brief — probing gaps, testing assumptions, and surfacing requirements you hadn't articulated. Concept-forming presents 2-3 approaches with explicit trade-offs, then auto-develops all of them to wireframe depth — you re-engage to compare, combine, and commit. Two responses matter during the approach phase:
-- **Challenge an option** — the agent rethinks rather than defends. If you say "approach B feels too complex," it doesn't argue for B — it revisits what made B seem necessary and looks for simpler alternatives.
-- **Reject everything** — the agent treats this as a signal that the real constraint hasn't surfaced yet. Instead of generating more options, it asks what's wrong with all of them. The answer usually reveals a requirement that wasn't in the brief.
-
-**Iterate.** Wireframing and user-testing form an iteration loop. User-testing surfaces usability issues; wireframing fixes them. Each wireframing round produces a revised wireframe you can react to or retest. Wireframing is capped at about 3 rounds per cycle — if the structure isn't converging, the problem is upstream in the concept, not in layout tweaks.
-
-**How feedback gets incorporated.** Across all modes, the agent doesn't defend its output. A challenge to a concept direction means rethinking the direction, not producing a better justification for it. A request to restructure a wireframe means restructuring, not explaining why the current structure is actually fine. The agent treats your reactions as constraints, not objections to overcome.
-
-**Convergence signals.** The agent tells you when to stop iterating. This shows up as explicit flags: "this is a visual polish issue, not a structural one" or "this problem traces back to the concept — re-run concept-forming instead of continuing to adjust wireframes." These signals prevent the common failure mode where you keep refining an artifact past the point of structural improvement, burning time on changes that belong in a different stage.
+**Iterate.** Wireframing and user-testing form a loop. User-testing surfaces issues; wireframing fixes them. Wireframing caps at about 3 rounds — if the structure isn't converging, the problem is upstream in the concept.
 
 ---
 
-## Session continuity
+## Design principles
 
-The system reconstructs context from artifacts, not conversation history. When you run checkpoint in a directory with existing artifacts, it reads every artifact, detects the current stage, and orients you.
+### Design is thinking, not decoration
 
-Artifacts carry the decisions. Session recaps (recap) carry the thinking between artifacts. Git history preserves iteration history. Resumption isn't a special feature — it's a side effect of how the system already works.
+Forma optimizes for decisions. The system treats design as increasingly specific commitments — from problem framing to interaction model to screen structure — where each stage forces a decision before the next begins. Jumping to wireframes before articulating the core interaction model produces layouts that encode no real design bet.
+
+### Opinionated defaults, flexible execution
+
+The workflow has a recommended flow that produces tested wireframes. You can run the full pipeline, skip stages, or jump in at any point. But when a stage runs, it runs with opinion — concept-forming names what each approach prioritizes and sacrifices, user-testing simulates specific people with specific behaviors. The system would rather be wrong and specific than right and vague.
+
+### Artifacts over conversations
+
+Every stage writes a durable file — brief, concept, wireframes, test results — that persists across sessions and can be read without context from the conversation that produced it. Design work is interrupt-heavy; artifacts carry the thinking forward so you don't re-derive decisions.
+
+### Specificity over flexibility
+
+Every stage pushes toward concrete, falsifiable statements. A concept direction names its key bet and the assumption it rests on, wireframes commit to specific screen structures, test results validate against specific behavior patterns. "Tabbed inbox with badge count on unread, swipe-to-archive" is actionable. "Clean, intuitive interface" is not.
+
+### Honest feedback, not validation
+
+The system challenges, not confirms. Concept-forming pressure-tests your direction by naming what it sacrifices. User-testing simulates real users who miss things, get confused, and say blunt things. If a wireframe has a fundamental problem, the system says so. It also flags diminishing returns — telling you to re-run concept-forming rather than continuing to adjust wireframes past the point of structural improvement.
+
+### Traceability
+
+Every concept names its key bet. Test results explicitly validate or contradict that bet. Session debriefs log what was decided and rejected. This prevents the most common failure mode: forgetting why something was decided and revisiting it endlessly.
+
+### Why ASCII wireframes
+
+ASCII wireframes are intentionally low-fidelity — no color to debate, no border radius to bikeshed. The medium forces attention on information hierarchy, interaction flow, and screen structure. They're also fast to generate and iterate on, which changes how you work: you stop protecting wireframes from criticism because replacing them costs almost nothing. And they live in the same medium as everything else — markdown files, versionable with git, diffable in PRs, readable by AI agents.
 
 ---
 
@@ -73,10 +149,3 @@ Artifacts carry the decisions. Session recaps (recap) carry the thinking between
 - **Not a replacement for real user research.** Simulated persona walkthroughs catch structural friction, but they're behavioral archetypes, not real people.
 - **Not a project management system.** No task tracking, no timeline, no team coordination. It's a design thinking tool for one person moving through a design problem.
 - **Not for visual-heavy design work.** Branding, illustration, motion design, data visualization — the text-based pipeline doesn't have much to offer. It's strongest when the problem is structural.
-
----
-
-## See also
-
-- [Quick Start](quickstart.md) — Usage patterns, examples, and which stages to skip
-- [Philosophy](philosophy.md) — Design principles, why ASCII wireframes, refine vs. fork
