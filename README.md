@@ -12,18 +12,32 @@ It runs as an opinionated workflow: each stage produces a persistent artifact th
 git clone https://github.com/rodh/Forma.git
 ```
 
+Start from scratch:
+
 **Claude Code:**
 
 ```
-cd your-project
-checkpoint my-first-design
+/design-briefing
 ```
 
 **Codex CLI:**
 
 ```
-cd your-project
-$checkpoint my-first-design
+$design-briefing
+```
+
+Or jump in anywhere:
+
+**Claude Code:**
+
+```
+/user-testing [screenshot.png]
+```
+
+**Codex CLI:**
+
+```
+$user-testing [screenshot.png]
 ```
 
 ## Skills
