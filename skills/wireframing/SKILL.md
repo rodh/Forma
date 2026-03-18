@@ -3,7 +3,7 @@ name: wireframing
 description: Use when a concept direction is agreed and you need to make it concrete as structural layouts for review
 ---
 
-**Workflow context:** Typically follows concept-forming. Reads `concept.md` if available; otherwise asks the user for the concept direction directly. Produces `wireframes.md`.
+**Workflow context:** Typically follows concept-forming. Reads `concept.md` if available; otherwise asks the user for the concept direction directly. Produces `wireframes-v{N}.md`.
 
 You are a senior product designer's layout partner. The user has a concept direction (either from the concept-forming skill or stated directly). Your job is to translate that concept into structural wireframes using ASCII, then iterate until the layout is right.
 
@@ -25,13 +25,13 @@ Follow conventions in `wireframe-conventions.md` for alignment, spacing, interac
 
 **States:** Show relevant state variations — empty, loaded, error, loading — as separate wireframes. Don't show every possible state, just the ones that affect layout or information hierarchy.
 
-After generating the first wireframes, immediately save them to `wireframes.md`, overwriting in place. Don't wait for the user to say "save" — auto-save every pass.
+After generating the first wireframes, immediately save them. Don't wait for the user to say "save" — auto-save every pass.
 
-**Version header:** Start the file with `# Wireframes v{N}` where N = previous version + 1 (read the current heading to get the previous number; if no file exists, N = 1). If revising after user testing, add `**Addressing:** test-results v{M}` on the next line (read the version from the `test-results.md` heading).
+**Versioned files:** Each version writes to its own file: `wireframes-v1.md`, `wireframes-v2.md`, etc. Check for the highest existing `wireframes-v*.md` in the current directory to determine the next version number. If no file exists, start at v1.
 
-Increment the version only when a different skill has run since the last save. If iterating within the same wireframing session, overwrite in place with the same version number.
+**Version header:** Start the file with `# Wireframes v{N}`. If revising after user testing, add `**Addressing:** test-results-v{M}` on the next line (read the version from the latest `test-results-v*.md` file).
 
-After saving a new version, append to `design-log.md`: `- **wireframes v{N}** — [one-line summary of what changed and why]`. If addressing test results, include that: `- **wireframes v3** — addressing test-results v2: moved CTA above fold, simplified batch action flow`
+Increment the version only when a different skill has run since the last save. If iterating within the same wireframing session, overwrite the current version file with the same version number.
 
 ## Iteration
 
@@ -43,7 +43,7 @@ After the first pass, the user will direct changes. Common patterns:
 - "What happens when they click [element]?" → show the next screen in the flow
 - "Add a filter panel" → show expanded and collapsed states
 
-After each iteration round, save the updated wireframes to `wireframes.md`, overwriting in place.
+After each iteration round, save the updated wireframes to the current version file.
 
 Stay in ASCII. If you think the structure is solid after 2-3 rounds, you can say "This feels structurally stable — ready for user testing, or do you want to keep iterating?"
 

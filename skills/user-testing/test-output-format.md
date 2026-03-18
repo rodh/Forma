@@ -28,7 +28,7 @@ Number action items sequentially (AI-1, AI-2, AI-3...). These IDs are stable ref
 
 ### On subsequent tests
 
-When `test-results.md` already exists: read prior results and compare previous action items against current wireframes. Instead of a single action items section, produce three sections (omit any that would be empty):
+When a prior `test-results-v*.md` exists: read prior results and compare previous action items against current wireframes. Instead of a single action items section, produce three sections (omit any that would be empty):
 
 - **Resolved from previous test:** Items the current wireframes have addressed. Preserve original AI-{n} IDs.
 - **Remaining issues:** Items still present. Preserve original AI-{n} IDs. Re-state why each still matters.

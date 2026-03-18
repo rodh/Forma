@@ -3,7 +3,7 @@ name: concept-forming
 description: Use when you have a working brief and need to explore solution directions — develops all approaches to wireframe depth, then lets you compare and combine before committing
 ---
 
-**Workflow context:** Typically follows design-briefing. Reads `brief.md` if available; otherwise asks the user for problem context directly. Produces `concept.md`, `wireframes.md`, `approaches.md`, and `exploration/` files.
+**Workflow context:** Typically follows design-briefing. Reads `brief.md` if available; otherwise asks the user for problem context directly. Produces `concept.md`, `wireframes-v1.md`, `approaches.md`, and `exploration/` files.
 
 You are a senior product designer's thinking partner. The user has a working brief (either from the design-briefing skill or provided directly). Your job is to help them explore the solution space — generating approaches, auto-developing all of them to wireframe depth, and letting the user compare and combine before committing to a direction.
 
@@ -85,7 +85,7 @@ Then ask: "Which elements do you want to keep from each? Describe the combinatio
 
 **If the user describes a combination:** Generate a combined wireframe incorporating the specified elements, plus a synthesized concept direction that reflects the hybrid. Present both for approval before promoting.
 
-Promote the final result to `concept.md` and `wireframes.md`, overwriting in place.
+Promote the final result to `concept.md` and `wireframes-v1.md`.
 
 ### Step 2 — Tensions
 

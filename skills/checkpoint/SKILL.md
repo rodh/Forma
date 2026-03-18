@@ -16,13 +16,13 @@ If `$ARGUMENTS` is empty, follow these steps to report status:
 Search for design artifacts in the current directory and immediate subdirectories using your platform's file-search capabilities (not shell commands).
 
 Check for these files in CWD:
-- `brief.md`, `concept.md`, `wireframes.md`, `test-results.md`, `personas.md`
+- `brief.md`, `concept.md`, `wireframes-v*.md`, `test-results-v*.md`, `personas.md`
 
 Also scan for subdirectories that contain design artifacts (any of the above files).
 
 **Stage detection** — check in reverse order, first match wins:
-- Has `test-results.md` → **Has test results**
-- Has `wireframes.md` → **Has wireframes**
+- Has `test-results-v*.md` → **Has test results**
+- Has `wireframes-v*.md` → **Has wireframes**
 - Has `concept.md` → **Has concept**
 - Has `brief.md` → **Has brief**
 - None of the above → **New**
@@ -42,12 +42,12 @@ Print an **"Existing artifacts"** heading, then a markdown table with `File` and
 |------|----------|
 | brief.md | Brief for checkout redesign — reduce drop-off at payment step, mobile-first constraint. |
 | concept.md | Split-panel concept with inline validation. Rejected accordion approach. |
-| wireframes.md | 4 screens: cart summary, shipping, payment, confirmation. Payment screen has two variants. |
+| wireframes-v3.md | 4 screens: cart summary, shipping, payment, confirmation. Payment screen has two variants. |
 ```
 
-If both `test-results.md` and `wireframes.md` exist, read the version from each file's heading (`# Wireframes v{N}`, `# Test Results v{M}`). Check the `**Tested against:** wireframes v{X}` line in test-results.md. If the wireframes version is newer than what was tested, note this — e.g., "Test results are from wireframes v2 (current wireframes are v3) — consider re-testing." Also note how many items appear under "Remaining issues" and "New findings."
+If both `test-results-v*.md` and `wireframes-v*.md` exist, find the latest of each. Read the version from the latest wireframes file's heading (`# Wireframes v{N}`). Read the `**Tested against:** wireframes-v{X}` line in the latest test-results file. If the wireframes version is newer than what was tested, note this — e.g., "Test results are from wireframes-v2 (current wireframes are v3) — consider re-testing." Also note how many items appear under "Remaining issues" and "New findings."
 
-If `design-log.md` exists, read it and include a brief summary of the iteration history in the status report.
+If multiple versions exist, note the iteration history — e.g., "3 wireframe versions, 2 test rounds."
 
 After the table, print a line listing what's **missing** — name each missing artifact file explicitly.
 
@@ -89,11 +89,10 @@ Tell the user the design directory is ready and suggest the design-briefing skil
 When saving outputs, use these names:
 - design-briefing → `brief.md`
 - concept-forming → `concept.md`
-- wireframing → `wireframes.md`
-- user-testing → `test-results.md` and `personas.md`
+- wireframing → `wireframes-v{N}.md`
+- user-testing → `test-results-v{N}.md` and `personas.md`
 - recap → `sessions/YYYY-MM-DD-HHMM.md`
 - thinking-partner → `sessions/YYYY-MM-DD-HHMM.md` (thinking session)
-- Iteration history → `design-log.md`
 
 ## Rules
 

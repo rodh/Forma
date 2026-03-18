@@ -49,9 +49,9 @@ $user-testing [screenshot.png]
 | Skill | What it does | Output |
 |-------|-------------|--------|
 | design-briefing | Distill raw context into a working brief through dialogue | `brief.md` |
-| concept-forming | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `wireframes.md`, `exploration/` |
-| wireframing | Generate ASCII wireframes from the concept | `wireframes.md` |
-| user-testing | AI persona usability walkthroughs | `test-results.md`, `personas.md` |
+| concept-forming | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `wireframes-v{N}.md`, `exploration/` |
+| wireframing | Generate ASCII wireframes from the concept | `wireframes-v{N}.md` |
+| user-testing | AI persona usability walkthroughs | `test-results-v{N}.md`, `personas.md` |
 
 ### Iteration and session management
 
@@ -139,7 +139,7 @@ $user-testing [screenshot.png]
   Recommendation: add a duration picker (1h, 1d, forever) to the
   mute action.
 
-  ✓ Test results saved → test-results.md
+  ✓ Test results saved → test-results-v1.md
 
 
 ▶ /wireframing fix the mute duration issue
@@ -160,7 +160,7 @@ $user-testing [screenshot.png]
   │    Brand Guidelines              │
   └──────────────────────────────────┘
 
-  ✓ Wireframes updated → wireframes.md
+  ✓ Wireframes updated → wireframes-v2.md
 
 
 ▶ /user-testing
@@ -168,7 +168,7 @@ $user-testing [screenshot.png]
   3 personas re-tested the updated wireframe.
   No critical issues. Minor: consider "Unmute" confirmation.
 
-  ✓ Test results saved → test-results-r2.md
+  ✓ Test results saved → test-results-v2.md
 
   This cycle repeats as needed:
 

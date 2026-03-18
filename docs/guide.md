@@ -10,7 +10,7 @@ Each skill reads the previous stage's artifact, does its work through dialogue o
 
 **Design briefing** opens a dialogue to distill messy input into a problem statement, constraints, known context, open questions, and an opinionated first instinct. It asks clarifying questions one at a time — probing gaps, surfacing ambiguity, testing assumptions — before synthesizing the brief.
 
-**Concept forming** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to wireframe depth. You compare the materialized approaches and pick one or combine elements from several. The result promotes to `concept.md` and `wireframes.md`.
+**Concept forming** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to wireframe depth. You compare the materialized approaches and pick one or combine elements from several. The result promotes to `concept.md` and `wireframes-v1.md`.
 
 **User testing** runs simulated usability walkthroughs with behavioral personas (generated from the brief, provided by you, or loaded from `personas.md`). Each persona encounters the design independently and surfaces friction that generic review misses. Results include consensus issues, a highest-leverage fix, and a check against the concept's key bet.
 
@@ -98,7 +98,7 @@ Never skip design-briefing. Even simple fixes benefit from a clear brief.
 
 ### Good to know
 
-**Auto-save.** All skills save their output immediately, overwriting in place. Git tracks version history.
+**Auto-save.** All skills save their output immediately. Wireframes and test results use versioned files (`wireframes-v1.md`, `wireframes-v2.md`, etc.) — each version is its own file. Other artifacts overwrite in place.
 
 **Any skill can be the entry point.** checkpoint is optional — run design-briefing directly if you don't need the status check.
 

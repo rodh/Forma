@@ -7,7 +7,7 @@ description: Thinking partner for understanding problems, evaluating directions,
 
 ## 1. Read context
 
-Read any design artifacts that exist in CWD: `brief.md`, `concept.md`, `wireframes.md`, `test-results.md`, `personas.md`, plus the most recent session note in `sessions/`. Also read any input the user provides — ticket content, questions, links, screenshots. Note what exists and what doesn't — this determines how the skill behaves.
+Read any design artifacts that exist in CWD: `brief.md`, `concept.md`, `wireframes-v*.md`, `test-results-v*.md`, `personas.md`, plus the most recent session note in `sessions/`. Also read any input the user provides — ticket content, questions, links, screenshots. Note what exists and what doesn't — this determines how the skill behaves.
 
 ## 2. Frame
 
@@ -83,7 +83,7 @@ When asking the user to choose or react, prefer labeled options (A/B/C) over ope
 If thinking leads to artifact changes:
 - List each file and the specific change proposed
 - Get approval per file via AskUserQuestion (approve / reject / modify)
-- On approval: apply changes, increment version header if applicable, append entry to `design-log.md`
+- On approval: apply changes. If modifying wireframes or test-results, create the next versioned file (`wireframes-v{N}.md` or `test-results-v{N}.md`)
 
 If understanding is ready to feed into a brief (orient pattern): offer to pass specific findings (level of effort, problem framing, research) as constraints into design-briefing. Don't auto-invoke — just name what would carry forward and let the user decide when.
 
