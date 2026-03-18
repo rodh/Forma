@@ -59,7 +59,7 @@ $user-testing [screenshot.png]
 |-------|-------------|--------|
 | checkpoint | Check status, resume, or create a design directory | — |
 | recap | Capture session decisions and open threads | `sessions/YYYY-MM-DD-HHMM.md` |
-| design-thinking | Think through a hunch, what-if, or decision mid-process | `sessions/YYYY-MM-DD-HHMM.md` |
+| thinking-partner | Understand problems, evaluate effort, reason through design decisions | `sessions/YYYY-MM-DD-HHMM.md` |
 
 ## Example session
 

@@ -75,11 +75,11 @@ Skip concept-forming if the direction is obvious (e.g., "add sort options to a l
 
 Run the full workflow — you're rethinking the approach. Concept-forming auto-develops all directions to wireframe depth so you can compare visually before committing.
 
-### Mid-process thinking
+### Thinking partner
 
-**Pattern:** design-thinking (at any point)
+**Pattern:** thinking-partner (at any point)
 
-When you have a hunch, a what-if, or a decision to make about something you're already working on. Design-thinking reads your existing artifacts, structures the thinking, and optionally applies changes. Three modes: vague instinct ("something feels off"), what-if ("what if we tried..."), or decision ("should we X or Y"). Dialogue scales with ambiguity — vague inputs get more back-and-forth, clear inputs get autonomous analysis.
+When you need to understand a problem, assess level of effort, or reason through a design decision. Works with or without existing artifacts — if you have a ticket and no design work yet, it decomposes the problem and assesses what level of design response it warrants. If you're mid-process, it handles hunches, what-ifs, and decisions against your existing artifacts. Dialogue scales with ambiguity — vague inputs get more back-and-forth, clear inputs get autonomous analysis.
 
 ### Resuming work
 
@@ -92,7 +92,7 @@ Run checkpoint with no arguments in a directory with design artifacts. It shows 
 | concept-forming | Direction is obvious. Bug fixes, minor iterations, well-defined tickets. |
 | user-testing | Change is cosmetic, low-risk, doesn't affect task completion. |
 | recap | Session was straightforward, no decisions worth preserving. |
-| design-thinking | The decision is obvious or the hunch isn't worth structured analysis. |
+| thinking-partner | The decision is obvious or the hunch isn't worth structured analysis. |
 
 Never skip design-briefing. Even simple fixes benefit from a clear brief.
 
@@ -114,7 +114,7 @@ Skills don't generate output in one shot. Most open a conversation — presentin
 
 **Dialogue + autonomy.** Design-briefing and concept-forming open with structured engagement. Design-briefing asks clarifying questions before drafting. Concept-forming presents approaches with trade-offs, then auto-develops all of them — you re-engage to compare, combine, and commit. Challenge an option and the agent rethinks rather than defends. Reject everything and it asks what's wrong — usually revealing a requirement that wasn't in the brief.
 
-**Structured thinking.** Design-thinking is a lateral skill — it can be invoked at any point. It reads your existing artifacts, frames the question (hunch, what-if, or decision), runs a four-part analysis, and optionally applies changes. Dialogue scales with ambiguity: vague instincts get more back-and-forth to sharpen the question, clear decisions get autonomous comparison.
+**Structured thinking.** Thinking-partner works before, during, or between design stages. Without artifacts, it decomposes problems and assesses level of effort. With artifacts, it frames the question (hunch, what-if, or decision), runs structured analysis, and optionally applies changes. Dialogue scales with ambiguity: vague instincts get more back-and-forth to sharpen the question, clear decisions get autonomous comparison.
 
 **Iterate.** Wireframing and user-testing form a loop. User-testing surfaces issues; wireframing fixes them. Wireframing caps at about 3 rounds — if the structure isn't converging, the problem is upstream in the concept.
 

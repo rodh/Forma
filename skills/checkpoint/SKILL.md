@@ -92,7 +92,7 @@ When saving outputs, use these names:
 - wireframing → `wireframes.md`
 - user-testing → `test-results.md` and `personas.md`
 - recap → `sessions/YYYY-MM-DD-HHMM.md`
-- design-thinking → `sessions/YYYY-MM-DD-HHMM.md` (thinking session)
+- thinking-partner → `sessions/YYYY-MM-DD-HHMM.md` (thinking session)
 - Iteration history → `design-log.md`
 
 ## Rules
