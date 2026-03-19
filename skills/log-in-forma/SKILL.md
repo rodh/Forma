@@ -1,5 +1,5 @@
 ---
-name: recap-in-forma
+name: log-in-forma
 description: Capture session context — decisions, insights, and open threads — in a debrief before ending a design session
 ---
 

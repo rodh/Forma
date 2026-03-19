@@ -83,7 +83,7 @@ When you need to understand a problem, assess level of effort, or reason through
 
 ### Resuming work
 
-Run checkpoint-in-forma with no arguments in a directory with design artifacts. It shows existing artifacts, missing artifacts, session context from the most recent recap, and options to continue or advance. Or use checkpoint-in-forma with a name argument to create a named subdirectory.
+Run status-in-forma with no arguments in a directory with design artifacts. It shows existing artifacts, missing artifacts, session context from the most recent recap, and options to continue or advance. Or use status-in-forma with a name argument to create a named subdirectory.
 
 ### Skipping stages
 
@@ -91,7 +91,7 @@ Run checkpoint-in-forma with no arguments in a directory with design artifacts. 
 |---|---|
 | ideating-in-forma | Direction is obvious. Bug fixes, minor iterations, well-defined tickets. |
 | user-testing-in-forma | Change is cosmetic, low-risk, doesn't affect task completion. |
-| recap-in-forma | Session was straightforward, no decisions worth preserving. |
+| log-in-forma | Session was straightforward, no decisions worth preserving. |
 | thinking-in-forma | The decision is obvious or the hunch isn't worth structured analysis. |
 
 Never skip framing-in-forma. Even simple fixes benefit from a clear frame.
@@ -100,7 +100,7 @@ Never skip framing-in-forma. Even simple fixes benefit from a clear frame.
 
 **Auto-save.** All skills save their output immediately. Wireframes and test results use versioned files (`wireframes-v1.md`, `wireframes-v2.md`, etc.) — each version is its own file. Other artifacts overwrite in place.
 
-**Any skill can be the entry point.** checkpoint-in-forma is optional — run framing-in-forma directly if you don't need the status check.
+**Any skill can be the entry point.** status-in-forma is optional — run framing-in-forma directly if you don't need the status check.
 
 **Flat directory model.** Skills operate on the current working directory. No required project structure — just `cd` into a directory and start.
 

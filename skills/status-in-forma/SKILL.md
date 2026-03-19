@@ -1,5 +1,5 @@
 ---
-name: checkpoint-in-forma
+name: status-in-forma
 description: Check design status in the current directory, or create a named subdirectory for a new design.
 ---
 
@@ -72,7 +72,7 @@ Present the user with options to choose from, showing up to 4 of the most recent
 
 **If no artifacts found anywhere:**
 
-Tell the user: "No design artifacts found. Run the framing-in-forma skill to start a new design here, or run checkpoint-in-forma with a name to create a subdirectory." Then stop.
+Tell the user: "No design artifacts found. Run the framing-in-forma skill to start a new design here, or run status-in-forma with a name to create a subdirectory." Then stop.
 
 ---
 
@@ -91,7 +91,7 @@ When saving outputs, use these names:
 - ideating-in-forma → `ideation.md`
 - wireframing-in-forma → `wireframes-v{N}.md`
 - user-testing-in-forma → `test-results-v{N}.md` and `personas.md`
-- recap-in-forma → `sessions/YYYY-MM-DD-HHMM.md`
+- log-in-forma → `sessions/YYYY-MM-DD-HHMM.md`
 - thinking-in-forma → `sessions/YYYY-MM-DD-HHMM.md` (thinking session)
 
 ## Rules

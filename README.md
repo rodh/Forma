@@ -57,8 +57,8 @@ $user-testing-in-forma [screenshot.png]
 
 | Skill | What it does | Output |
 |-------|-------------|--------|
-| checkpoint-in-forma | Check status, resume, or create a design directory | — |
-| recap-in-forma | Capture session decisions and open threads | `sessions/YYYY-MM-DD-HHMM.md` |
+| status-in-forma | Check status, resume, or create a design directory | — |
+| log-in-forma | Capture session decisions and open threads | `sessions/YYYY-MM-DD-HHMM.md` |
 | thinking-in-forma | Understand problems, evaluate effort, reason through design decisions | `sessions/YYYY-MM-DD-HHMM.md` |
 
 ## Example session
