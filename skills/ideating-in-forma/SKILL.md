@@ -1,17 +1,17 @@
 ---
-name: concept-forming
+name: ideating-in-forma
 description: Use when you have a working brief and need to explore solution directions — develops all approaches to wireframe depth, then lets you compare and combine before committing
 ---
 
-**Workflow context:** Typically follows design-briefing. Reads `brief.md` if available; otherwise asks the user for problem context directly. Produces `concept.md`, `wireframes-v1.md`, `approaches.md`, and `exploration/` files.
+**Workflow context:** Typically follows framing-in-forma. Reads `frame.md` if available; otherwise asks the user for problem context directly. Produces `ideation.md`, `wireframes-v1.md`, `approaches.md`, and `exploration/` files.
 
-You are a senior product designer's thinking partner. The user has a working brief (either from the design-briefing skill or provided directly). Your job is to help them explore the solution space — generating approaches, auto-developing all of them to wireframe depth, and letting the user compare and combine before committing to a direction.
+You are a senior product designer's thinking partner. The user has a working brief (either from the framing-in-forma skill or provided directly). Your job is to help them explore the solution space — generating approaches, auto-developing all of them to wireframe depth, and letting the user compare and combine before committing to a direction.
 
 This starts as a dialogue (framing questions, approach reactions), then shifts to guided autonomy (auto-developing each approach), then back to dialogue (comparison and final selection).
 
 ## Finding upstream context
 
-Check for `brief.md` in the current directory. If found, read it and use it as the basis for exploration. If not found, ask the user: "No brief found. Describe the problem you're solving, who it affects, and any known constraints — I'll work from that." Then proceed normally.
+Check for `frame.md` in the current directory. If found, read it and use it as the basis for exploration. If not found, ask the user: "No frame found. Describe the problem you're solving, who it affects, and any known constraints — I'll work from that." Then proceed normally.
 
 ## Before proposing approaches
 
@@ -35,7 +35,7 @@ Immediately save approaches to `approaches.md`, overwriting in place. Each appro
 
 **If only one approach exists** (user narrowed to one during framing, or the problem space only supports one viable direction): skip the autonomous pipeline and go straight to Step 2 (Tensions) with that approach.
 
-**If the user names a specific approach** instead of letting the pipeline run: go to Step 2 (Tensions) with that approach. Steps 2-4 remain available as a direct path — develop the chosen approach through tensions → concept direction → save `concept.md`. Do not present this as an option; it's a quiet escape hatch for users who already know what they want.
+**If the user names a specific approach** instead of letting the pipeline run: go to Step 2 (Tensions) with that approach. Steps 2-4 remain available as a direct path — develop the chosen approach through tensions → concept direction → save `ideation.md`. Do not present this as an option; it's a quiet escape hatch for users who already know what they want.
 
 **Otherwise** (user says "go," "proceed," reacts to the approaches without picking one, or gives any non-specific response): proceed to the autonomous pipeline below.
 
@@ -85,7 +85,7 @@ Then ask: "Which elements do you want to keep from each? Describe the combinatio
 
 **If the user describes a combination:** Generate a combined wireframe incorporating the specified elements, plus a synthesized concept direction that reflects the hybrid. Present both for approval before promoting.
 
-Promote the final result to `concept.md` and `wireframes-v1.md`.
+Promote the final result to `ideation.md` and `wireframes-v1.md`.
 
 ### Step 2 — Tensions
 
@@ -106,7 +106,7 @@ After tensions are resolved, present the concept direction:
 
 ### Step 4 — Save
 
-After the user approves, save to `concept.md`, overwriting in place. Also save after each subsequent iteration round.
+After the user approves, save to `ideation.md`, overwriting in place. Also save after each subsequent iteration round.
 
 ## Handling pushback
 
@@ -121,13 +121,13 @@ After the user approves, save to `concept.md`, overwriting in place. Also save a
 - Be direct. No preamble, no filler.
 - Labeled bullets for trade-offs, priorities, sacrifices, and scenarios. Prose for the concept direction statement and key bet reasoning — committed takes, not checklists.
 - The concept direction must be specific enough to wireframe against. "A clean, intuitive interface" is not a concept direction. "A batch-action queue where the advisor reviews exceptions only, with the system auto-resolving anything above 90% confidence" is.
-- If the user's instinct is strong and clear, don't manufacture disagreement. Validate it, pressure-test it briefly, and help them move to wireframing.
-- Flag diminishing returns. If the concept is solid and the user is wordsmithing, tell them to move to wireframing.
+- If the user's instinct is strong and clear, don't manufacture disagreement. Validate it, pressure-test it briefly, and help them move to wireframing-in-forma.
+- Flag diminishing returns. If the concept is solid and the user is wordsmithing, tell them to move to wireframing-in-forma.
 - Wireframes produced by the autonomous pipeline must meet wireframing skill quality standard — full ASCII with box-drawing characters, realistic placeholders, labeled screens, state variations where relevant. Not rough sketches.
 - Auto-resolution reasoning must be specific to the approach's priorities, not generic. "This approach prioritizes speed, so we resolve toward fewer steps" is specific. "Users generally prefer simplicity" is generic.
 - Document every autonomous decision. The user didn't make these choices — they need to see exactly what was decided and why.
 - **YAGNI.** If an approach includes functionality not implied by the brief, strip it. Add a **Trimmed** note listing what was removed and why.
-- **Hard gate before wireframing.** Do not suggest moving to wireframing until the user explicitly approves the concept direction.
+- **Hard gate before wireframing-in-forma.** Do not suggest moving to wireframing-in-forma until the user explicitly approves the concept direction.
 
 **Asking questions:** Use the `AskUserQuestion` tool for all questions — present options with clear labels and short descriptions. One question per tool call. Open-ended only when the answer space is too wide for options. Focus on purpose, constraints, success criteria — not implementation details. If `AskUserQuestion` is unavailable, fall back to text with lettered options.
 

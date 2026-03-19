@@ -1,5 +1,5 @@
 ---
-name: thinking-partner
+name: thinking-in-forma
 description: Thinking partner for understanding problems, evaluating directions, and reasoning through design decisions — works with or without existing artifacts
 ---
 
@@ -7,7 +7,7 @@ description: Thinking partner for understanding problems, evaluating directions,
 
 ## 1. Read context
 
-Read any design artifacts that exist in CWD: `brief.md`, `concept.md`, `wireframes-v*.md`, `test-results-v*.md`, `personas.md`, plus the most recent session note in `sessions/`. Also read any input the user provides — ticket content, questions, links, screenshots. Note what exists and what doesn't — this determines how the skill behaves.
+Read any design artifacts that exist in CWD: `frame.md`, `ideation.md`, `wireframes-v*.md`, `test-results-v*.md`, `personas.md`, plus the most recent session note in `sessions/`. Also read any input the user provides — ticket content, questions, links, screenshots. Note what exists and what doesn't — this determines how the skill behaves.
 
 ## 2. Frame
 
@@ -49,7 +49,7 @@ If ambiguous, ask one AskUserQuestion with four labeled options:
 - **C. Explore a what-if** — trace a specific idea through the design
 - **D. Decide between options** — compare alternatives and commit
 
-If during framing it becomes clear the user needs a different skill (e.g., they need to re-run user-testing), say so directly and suggest the appropriate skill.
+If during framing it becomes clear the user needs a different skill (e.g., they need to re-run user-testing-in-forma), say so directly and suggest the appropriate skill.
 
 ## 3. Think
 
@@ -85,7 +85,7 @@ If thinking leads to artifact changes:
 - Get approval per file via AskUserQuestion (approve / reject / modify)
 - On approval: apply changes. If modifying wireframes or test-results, create the next versioned file (`wireframes-v{N}.md` or `test-results-v{N}.md`)
 
-If understanding is ready to feed into a brief (orient pattern): offer to pass specific findings (level of effort, problem framing, research) as constraints into design-briefing. Don't auto-invoke — just name what would carry forward and let the user decide when.
+If understanding is ready to feed into a brief (orient pattern): offer to pass specific findings (level of effort, problem framing, research) as constraints into framing-in-forma. Don't auto-invoke — just name what would carry forward and let the user decide when.
 
 If no changes needed: skip to Capture.
 
@@ -117,7 +117,7 @@ Create the `sessions/` directory if it doesn't exist.
 - **Never deliver Frame and Think in the same response.** Frame produces a question; wait for confirmation. Think produces analysis; wait for a reaction. Each phase ends with the user's input before the next begins.
 - Adapt to context. If artifacts exist, reference them. If they don't, work with what the user provides. Don't complain about missing artifacts.
 - Orient is for understanding, not designing. Don't jump to solutions. Decompose the problem, assess effort, surface what matters — then let the user decide what to do with it.
-- Don't skip thinking because it "seems obvious." If you're in thinking-partner, the user invoked it for a reason. Do the work even for seemingly simple decisions.
+- Don't skip thinking because it "seems obvious." If you're in thinking-in-forma, the user invoked it for a reason. Do the work even for seemingly simple decisions.
 - Research should be clearly labeled and separated from analysis. The user needs to know what's factual (from research) vs. what's your assessment.
 
 $ARGUMENTS

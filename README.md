@@ -17,13 +17,13 @@ Start from scratch:
 **Claude Code:**
 
 ```
-/design-briefing
+/framing-in-forma
 ```
 
 **Codex CLI:**
 
 ```
-$design-briefing
+$framing-in-forma
 ```
 
 Or jump in anywhere:
@@ -31,13 +31,13 @@ Or jump in anywhere:
 **Claude Code:**
 
 ```
-/user-testing [screenshot.png]
+/user-testing-in-forma [screenshot.png]
 ```
 
 **Codex CLI:**
 
 ```
-$user-testing [screenshot.png]
+$user-testing-in-forma [screenshot.png]
 ```
 
 ## Skills
@@ -48,25 +48,25 @@ $user-testing [screenshot.png]
 
 | Skill | What it does | Output |
 |-------|-------------|--------|
-| design-briefing | Distill raw context into a working brief through dialogue | `brief.md` |
-| concept-forming | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `wireframes-v{N}.md`, `exploration/` |
-| wireframing | Generate ASCII wireframes from the concept | `wireframes-v{N}.md` |
-| user-testing | AI persona usability walkthroughs | `test-results-v{N}.md`, `personas.md` |
+| framing-in-forma | Distill raw context into a working frame through dialogue | `frame.md` |
+| ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `ideation.md`, `approaches.md`, `wireframes-v{N}.md`, `exploration/` |
+| wireframing-in-forma | Generate ASCII wireframes from the concept | `wireframes-v{N}.md` |
+| user-testing-in-forma | AI persona usability walkthroughs | `test-results-v{N}.md`, `personas.md` |
 
 ### Iteration and session management
 
 | Skill | What it does | Output |
 |-------|-------------|--------|
-| checkpoint | Check status, resume, or create a design directory | — |
-| recap | Capture session decisions and open threads | `sessions/YYYY-MM-DD-HHMM.md` |
-| thinking-partner | Understand problems, evaluate effort, reason through design decisions | `sessions/YYYY-MM-DD-HHMM.md` |
+| checkpoint-in-forma | Check status, resume, or create a design directory | — |
+| recap-in-forma | Capture session decisions and open threads | `sessions/YYYY-MM-DD-HHMM.md` |
+| thinking-in-forma | Understand problems, evaluate effort, reason through design decisions | `sessions/YYYY-MM-DD-HHMM.md` |
 
 ## Example session
 
 > **Platform syntax:** Claude Code uses `/skill-name`, Codex CLI uses `$skill-name`. This example uses `/` — swap for your platform's prefix.
 
 ```
-▶ /design-briefing
+▶ /framing-in-forma
   [notifications-requirements.md]  [current-save-flow.png]
 
   Teams need to be notified when a teammate saves content to a shared
@@ -79,10 +79,10 @@ $user-testing [screenshot.png]
 
 > Per-topic mute only. Default on, opt-out.
 
-  ✓ Brief saved → brief.md
+  ✓ Frame saved → frame.md
 
 
-▶ /concept-forming
+▶ /ideating-in-forma
 
   Three directions:
 
@@ -125,13 +125,13 @@ $user-testing [screenshot.png]
 
 > C — mute controls inline is exactly right.
 
-  ✓ Concept locked → concept.md
+  ✓ Concept locked → ideation.md
   Direction: notify-on-save with inline mute controls.
   Key bet: users will manage noise themselves if controls are
   within reach.
 
 
-▶ /user-testing
+▶ /user-testing-in-forma
 
   3 personas walked through the design independently.
   Consensus issue: mute toggle is discoverable but "mute duration"
@@ -142,7 +142,7 @@ $user-testing [screenshot.png]
   ✓ Test results saved → test-results-v1.md
 
 
-▶ /wireframing fix the mute duration issue
+▶ /wireframing-in-forma fix the mute duration issue
 
   ┌──────────────────────────────────┐
   │ ┌──────────────────────────────┐ │
@@ -163,7 +163,7 @@ $user-testing [screenshot.png]
   ✓ Wireframes updated → wireframes-v2.md
 
 
-▶ /user-testing
+▶ /user-testing-in-forma
 
   3 personas re-tested the updated wireframe.
   No critical issues. Minor: consider "Unmute" confirmation.
@@ -174,12 +174,12 @@ $user-testing [screenshot.png]
 
            │
            ▼
-  ┌─────────────────┐◄──────────────┐
-  │  wireframing     │               │
-  └────────┬────────┘               │
-           ▼                        │
-  ┌─────────────────┐    ┌─────────┴───────┐
-  │  user-testing    │───►│ Issues found?   │
+  ┌──────────────────────────┐◄─────┐
+  │  wireframing-in-forma    │      │
+  └────────────┬─────────────┘      │
+               ▼                    │
+  ┌──────────────────────────┐  ┌───┴─────────────┐
+  │  user-testing-in-forma   │─►│ Issues found?   │
   └────────┬────────┘    │ Refine & retest │
            │              └─────────────────┘
            │ (passes)

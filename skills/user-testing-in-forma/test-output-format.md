@@ -42,7 +42,7 @@ What problems did multiple personas hit? Numbered list, each with evidence. Belo
 
 One recommendation, bolded, with 2–4 bullets on what it accomplishes. End with a readiness assessment: where the design stands and a clear next step (iterate wireframes, move to prototype, run another targeted test, etc.).
 
-If the concept from the concept-forming skill included a key bet, report whether the walkthroughs validated or contradicted it.
+If the concept from the ideating-in-forma skill included a key bet, report whether the walkthroughs validated or contradicted it.
 
 ### Detailed walkthroughs
 

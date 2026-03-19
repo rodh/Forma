@@ -1,9 +1,9 @@
 ---
-name: user-testing
+name: user-testing-in-forma
 description: Use when wireframes exist and you need to validate the design against realistic user behavior before implementation
 ---
 
-**Workflow context:** Typically follows wireframing. Reads the latest `wireframes-v*.md` and `concept.md` if available; can also test screenshots or descriptions provided directly. Produces `test-results-v{N}.md` and `personas.md`.
+**Workflow context:** Typically follows wireframing-in-forma. Reads the latest `wireframes-v*.md` and `ideation.md` if available; can also test screenshots or descriptions provided directly. Produces `test-results-v{N}.md` and `personas.md`.
 
 You are simulating real users walking through a design for the first time. Not a heuristic review. Not a checklist. You are inhabiting specific personas and reporting what they would actually do, miss, struggle with, and say.
 
@@ -16,7 +16,7 @@ Check for `personas.md` in the current directory.
 **If not found:** Ask: "No personas defined yet. Do you want to provide your own, or should I generate them from the brief and concept?"
 
 - If user provides → use those
-- If user says generate → read `brief.md` and `concept.md` from the current directory, generate 2-3 personas
+- If user says generate → read `frame.md` and `ideation.md` from the current directory, generate 2-3 personas
 
 **All paths → save to `personas.md`** in the current directory before running the walkthrough. After first run, the project owns its personas — no more prompts, consistent testing.
 
@@ -24,14 +24,14 @@ Good personas have: a name, a role, a key behavioral trait, a trust/speed orient
 
 ## Input
 
-Check for the latest `wireframes-v*.md` in the current directory. If found, use it. Also check for `concept.md` — if found, use the key bet as a validation target.
+Check for the latest `wireframes-v*.md` in the current directory. If found, use it. Also check for `ideation.md` — if found, use the key bet as a validation target.
 
 If no wireframes file exists, the user must provide one of:
 - A text description of the screens and layout
 - Screenshots pasted into the conversation
 - Inline wireframes in their message
 
-If no concept.md exists, skip key-bet validation — focus the test on usability and task completion instead.
+If no ideation.md exists, skip key-bet validation — focus the test on usability and task completion instead.
 
 ## Adaptive screens
 

@@ -1,5 +1,5 @@
 ---
-name: checkpoint
+name: checkpoint-in-forma
 description: Check design status in the current directory, or create a named subdirectory for a new design.
 ---
 
@@ -16,15 +16,15 @@ If `$ARGUMENTS` is empty, follow these steps to report status:
 Search for design artifacts in the current directory and immediate subdirectories using your platform's file-search capabilities (not shell commands).
 
 Check for these files in CWD:
-- `brief.md`, `concept.md`, `wireframes-v*.md`, `test-results-v*.md`, `personas.md`
+- `frame.md`, `ideation.md`, `wireframes-v*.md`, `test-results-v*.md`, `personas.md`
 
 Also scan for subdirectories that contain design artifacts (any of the above files).
 
 **Stage detection** — check in reverse order, first match wins:
 - Has `test-results-v*.md` → **Has test results**
 - Has `wireframes-v*.md` → **Has wireframes**
-- Has `concept.md` → **Has concept**
-- Has `brief.md` → **Has brief**
+- Has `ideation.md` → **Has ideation**
+- Has `frame.md` → **Has frame**
 - None of the above → **New**
 
 Note the presence of `personas.md` — if it exists, mention it alongside the stage.
@@ -40,8 +40,8 @@ Print an **"Existing artifacts"** heading, then a markdown table with `File` and
 
 | File | Contents |
 |------|----------|
-| brief.md | Brief for checkout redesign — reduce drop-off at payment step, mobile-first constraint. |
-| concept.md | Split-panel concept with inline validation. Rejected accordion approach. |
+| frame.md | Brief for checkout redesign — reduce drop-off at payment step, mobile-first constraint. |
+| ideation.md | Split-panel concept with inline validation. Rejected accordion approach. |
 | wireframes-v3.md | 4 screens: cart summary, shipping, payment, confirmation. Payment screen has two variants. |
 ```
 
@@ -56,10 +56,10 @@ If session notes exist in `sessions/`, read the most recent one. Include any ope
 Then print a line summarizing the **current state** — what stage the design is at and any notable context.
 
 Then print a `> **Next up:**` blockquote recommending the logical next step based on the detected stage:
-- **New** → "Start with design-briefing to create a brief."
-- **Has brief** → "Move to concept-forming to explore approaches."
-- **Has concept** → "Move to wireframing to make it concrete."
-- **Has wireframes** → "Move to user-testing to validate the design."
+- **New** → "Start with framing-in-forma to create a frame."
+- **Has frame** → "Move to ideating-in-forma to explore approaches."
+- **Has ideation** → "Move to wireframing-in-forma to make it concrete."
+- **Has wireframes** → "Move to user-testing-in-forma to validate the design."
 - **Has test results** → Read the test results and recommend based on what they say: another wireframe iteration if unresolved issues remain, or prototyping if the design tested well.
 
 Present the user with a "Where do you want to pick up?" question with options based on what exists.
@@ -72,7 +72,7 @@ Present the user with options to choose from, showing up to 4 of the most recent
 
 **If no artifacts found anywhere:**
 
-Tell the user: "No design artifacts found. Run the design-briefing skill to start a new design here, or run checkpoint with a name to create a subdirectory." Then stop.
+Tell the user: "No design artifacts found. Run the framing-in-forma skill to start a new design here, or run checkpoint-in-forma with a name to create a subdirectory." Then stop.
 
 ---
 
@@ -82,17 +82,17 @@ Create a subdirectory named `$ARGUMENTS` in CWD if it doesn't already exist. Ask
 
 If the subdirectory already exists, report its status using the artifact table format above.
 
-Tell the user the design directory is ready and suggest the design-briefing skill to get started (if empty) or present "Where do you want to pick up?" options (if artifacts exist).
+Tell the user the design directory is ready and suggest the framing-in-forma skill to get started (if empty) or present "Where do you want to pick up?" options (if artifacts exist).
 
 ## File naming convention
 
 When saving outputs, use these names:
-- design-briefing → `brief.md`
-- concept-forming → `concept.md`
-- wireframing → `wireframes-v{N}.md`
-- user-testing → `test-results-v{N}.md` and `personas.md`
-- recap → `sessions/YYYY-MM-DD-HHMM.md`
-- thinking-partner → `sessions/YYYY-MM-DD-HHMM.md` (thinking session)
+- framing-in-forma → `frame.md`
+- ideating-in-forma → `ideation.md`
+- wireframing-in-forma → `wireframes-v{N}.md`
+- user-testing-in-forma → `test-results-v{N}.md` and `personas.md`
+- recap-in-forma → `sessions/YYYY-MM-DD-HHMM.md`
+- thinking-in-forma → `sessions/YYYY-MM-DD-HHMM.md` (thinking session)
 
 ## Rules
 

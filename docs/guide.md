@@ -8,19 +8,19 @@ Forma is a design toolkit for rapid iteration — a set of skills that give your
 
 Each skill reads the previous stage's artifact, does its work through dialogue or structured processing, and writes a file to the current directory.
 
-**Design briefing** opens a dialogue to distill messy input into a problem statement, constraints, known context, open questions, and an opinionated first instinct. It asks clarifying questions one at a time — probing gaps, surfacing ambiguity, testing assumptions — before synthesizing the brief.
+**Framing** opens a dialogue to distill messy input into a problem statement, constraints, known context, open questions, and an opinionated first instinct. It asks clarifying questions one at a time — probing gaps, surfacing ambiguity, testing assumptions — before synthesizing the frame.
 
-**Concept forming** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to wireframe depth. You compare the materialized approaches and pick one or combine elements from several. The result promotes to `concept.md` and `wireframes-v1.md`.
+**Ideating** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to wireframe depth. You compare the materialized approaches and pick one or combine elements from several. The result promotes to `ideation.md` and `wireframes-v1.md`.
 
-**User testing** runs simulated usability walkthroughs with behavioral personas (generated from the brief, provided by you, or loaded from `personas.md`). Each persona encounters the design independently and surfaces friction that generic review misses. Results include consensus issues, a highest-leverage fix, and a check against the concept's key bet.
+**User testing** runs simulated usability walkthroughs with behavioral personas (generated from the frame, provided by you, or loaded from `personas.md`). Each persona encounters the design independently and surfaces friction that generic review misses. Results include consensus issues, a highest-leverage fix, and a check against the concept's key bet.
 
-**Wireframing** translates or refines screen structure using ASCII art. After concept-forming produces initial wireframes, wireframing handles iteration — fixing issues from user-testing, adjusting layout, adding screens. Wireframing and user-testing form a loop: fix issues, retest, repeat until stable. Iteration caps at three rounds.
+**Wireframing** translates or refines screen structure using ASCII art. After ideating-in-forma produces initial wireframes, wireframing-in-forma handles iteration — fixing issues from user-testing-in-forma, adjusting layout, adding screens. Wireframing and user testing form a loop: fix issues, retest, repeat until stable. Iteration caps at three rounds.
 
 ---
 
 ## What you can brief
 
-Design-briefing accepts any messy input — tickets, Slack threads, screenshots, PRDs, user feedback, analytics, sketches, competitor UI, meeting transcripts, personal observations. Combine them freely. A typical briefing might include a Jira ticket, two Slack messages that add context the ticket missed, and a note about what you noticed trying the current flow. Thin input produces thin briefs.
+Framing-in-forma accepts any messy input — tickets, Slack threads, screenshots, PRDs, user feedback, analytics, sketches, competitor UI, meeting transcripts, personal observations. Combine them freely. A typical briefing might include a Jira ticket, two Slack messages that add context the ticket missed, and a note about what you noticed trying the current flow. Thin input produces thin briefs.
 
 ---
 
@@ -32,75 +32,75 @@ Pick the scenario that matches your task. Follow the skills in order. Skip what 
 
 ### New idea from scratch
 
-**Pattern:** design-briefing → concept-forming → user-testing → [wireframing ↔ user-testing]
+**Pattern:** framing-in-forma → ideating-in-forma → user-testing-in-forma → [wireframing-in-forma ↔ user-testing-in-forma]
 
 ```
 mkdir my-app && cd my-app
 
-/design-briefing
+/framing-in-forma
 I want to build a personal content saving app. I keep finding useful stuff
 on Reddit, YouTube, LinkedIn — but I never go back to it. I want something
 that captures content fast, organizes it with AI, and helps me use it later.
 
-/concept-forming
+/ideating-in-forma
 
-/user-testing
+/user-testing-in-forma
 
-/wireframing (fix issues from testing)
+/wireframing-in-forma (fix issues from testing)
 
-/user-testing (retest)
+/user-testing-in-forma (retest)
 ```
 
 ### Bug fix (visual/UI)
 
-**Pattern:** design-briefing → wireframing → optional user-testing
+**Pattern:** framing-in-forma → wireframing-in-forma → optional user-testing-in-forma
 
-Skip concept-forming — the problem and solution space are narrow enough to go straight to wireframing.
+Skip ideating-in-forma — the problem and solution space are narrow enough to go straight to wireframing.
 
 ### Bug fix (behavioral/logic)
 
-**Pattern:** design-briefing → wireframing → user-testing
+**Pattern:** framing-in-forma → wireframing-in-forma → user-testing-in-forma
 
-Always run user-testing — behavioral bugs affect task completion.
+Always run user-testing-in-forma — behavioral bugs affect task completion.
 
 ### Feature iteration
 
-**Pattern:** design-briefing → optional concept-forming → wireframing → user-testing
+**Pattern:** framing-in-forma → optional ideating-in-forma → wireframing-in-forma → user-testing-in-forma
 
-Skip concept-forming if the direction is obvious (e.g., "add sort options to a list").
+Skip ideating-in-forma if the direction is obvious (e.g., "add sort options to a list").
 
 ### Feature modification
 
-**Pattern:** design-briefing → concept-forming → user-testing → [wireframing ↔ user-testing]
+**Pattern:** framing-in-forma → ideating-in-forma → user-testing-in-forma → [wireframing-in-forma ↔ user-testing-in-forma]
 
-Run the full workflow — you're rethinking the approach. Concept-forming auto-develops all directions to wireframe depth so you can compare visually before committing.
+Run the full workflow — you're rethinking the approach. Ideating-in-forma auto-develops all directions to wireframe depth so you can compare visually before committing.
 
 ### Thinking partner
 
-**Pattern:** thinking-partner (at any point)
+**Pattern:** thinking-in-forma (at any point)
 
 When you need to understand a problem, assess level of effort, or reason through a design decision. Works with or without existing artifacts — if you have a ticket and no design work yet, it decomposes the problem and assesses what level of design response it warrants. If you're mid-process, it handles hunches, what-ifs, and decisions against your existing artifacts. Dialogue scales with ambiguity — vague inputs get more back-and-forth, clear inputs get autonomous analysis.
 
 ### Resuming work
 
-Run checkpoint with no arguments in a directory with design artifacts. It shows existing artifacts, missing artifacts, session context from the most recent recap, and options to continue or advance. Or use checkpoint with a name argument to create a named subdirectory.
+Run checkpoint-in-forma with no arguments in a directory with design artifacts. It shows existing artifacts, missing artifacts, session context from the most recent recap, and options to continue or advance. Or use checkpoint-in-forma with a name argument to create a named subdirectory.
 
 ### Skipping stages
 
 | Stage | Safe to skip when |
 |---|---|
-| concept-forming | Direction is obvious. Bug fixes, minor iterations, well-defined tickets. |
-| user-testing | Change is cosmetic, low-risk, doesn't affect task completion. |
-| recap | Session was straightforward, no decisions worth preserving. |
-| thinking-partner | The decision is obvious or the hunch isn't worth structured analysis. |
+| ideating-in-forma | Direction is obvious. Bug fixes, minor iterations, well-defined tickets. |
+| user-testing-in-forma | Change is cosmetic, low-risk, doesn't affect task completion. |
+| recap-in-forma | Session was straightforward, no decisions worth preserving. |
+| thinking-in-forma | The decision is obvious or the hunch isn't worth structured analysis. |
 
-Never skip design-briefing. Even simple fixes benefit from a clear brief.
+Never skip framing-in-forma. Even simple fixes benefit from a clear frame.
 
 ### Good to know
 
 **Auto-save.** All skills save their output immediately. Wireframes and test results use versioned files (`wireframes-v1.md`, `wireframes-v2.md`, etc.) — each version is its own file. Other artifacts overwrite in place.
 
-**Any skill can be the entry point.** checkpoint is optional — run design-briefing directly if you don't need the status check.
+**Any skill can be the entry point.** checkpoint-in-forma is optional — run framing-in-forma directly if you don't need the status check.
 
 **Flat directory model.** Skills operate on the current working directory. No required project structure — just `cd` into a directory and start.
 
@@ -112,11 +112,11 @@ Skills don't generate output in one shot. Most open a conversation — presentin
 
 **Absorb.** Some skills take input and produce output without back-and-forth. User testing runs persona walkthroughs against your wireframes. Recap captures session thinking. You give the agent material, it processes it, done.
 
-**Dialogue + autonomy.** Design-briefing and concept-forming open with structured engagement. Design-briefing asks clarifying questions before drafting. Concept-forming presents approaches with trade-offs, then auto-develops all of them — you re-engage to compare, combine, and commit. Challenge an option and the agent rethinks rather than defends. Reject everything and it asks what's wrong — usually revealing a requirement that wasn't in the brief.
+**Dialogue + autonomy.** Framing-in-forma and ideating-in-forma open with structured engagement. Framing-in-forma asks clarifying questions before drafting. Ideating-in-forma presents approaches with trade-offs, then auto-develops all of them — you re-engage to compare, combine, and commit. Challenge an option and the agent rethinks rather than defends. Reject everything and it asks what's wrong — usually revealing a requirement that wasn't in the brief.
 
-**Structured thinking.** Thinking-partner works before, during, or between design stages. Without artifacts, it decomposes problems and assesses level of effort. With artifacts, it frames the question (hunch, what-if, or decision), runs structured analysis, and optionally applies changes. Dialogue scales with ambiguity: vague instincts get more back-and-forth to sharpen the question, clear decisions get autonomous comparison.
+**Structured thinking.** Thinking-in-forma works before, during, or between design stages. Without artifacts, it decomposes problems and assesses level of effort. With artifacts, it frames the question (hunch, what-if, or decision), runs structured analysis, and optionally applies changes. Dialogue scales with ambiguity: vague instincts get more back-and-forth to sharpen the question, clear decisions get autonomous comparison.
 
-**Iterate.** Wireframing and user-testing form a loop. User-testing surfaces issues; wireframing fixes them. Wireframing caps at about 3 rounds — if the structure isn't converging, the problem is upstream in the concept.
+**Iterate.** Wireframing-in-forma and user-testing-in-forma form a loop. User-testing-in-forma surfaces issues; wireframing-in-forma fixes them. Wireframing-in-forma caps at about 3 rounds — if the structure isn't converging, the problem is upstream in the concept.
 
 ---
 
@@ -128,7 +128,7 @@ Forma optimizes for decisions. The system treats design as increasingly specific
 
 ### Opinionated defaults, flexible execution
 
-The workflow has a recommended flow that produces tested wireframes. You can run the full pipeline, skip stages, or jump in at any point. But when a stage runs, it runs with opinion — concept-forming names what each approach prioritizes and sacrifices, user-testing simulates specific people with specific behaviors. The system would rather be wrong and specific than right and vague.
+The workflow has a recommended flow that produces tested wireframes. You can run the full pipeline, skip stages, or jump in at any point. But when a stage runs, it runs with opinion — ideating-in-forma names what each approach prioritizes and sacrifices, user-testing-in-forma simulates specific people with specific behaviors. The system would rather be wrong and specific than right and vague.
 
 ### Artifacts over conversations
 
@@ -140,7 +140,7 @@ Every stage pushes toward concrete, falsifiable statements. A concept direction 
 
 ### Honest feedback, not validation
 
-The system challenges, not confirms. Concept-forming pressure-tests your direction by naming what it sacrifices. User-testing simulates real users who miss things, get confused, and say blunt things. If a wireframe has a fundamental problem, the system says so. It also flags diminishing returns — telling you to re-run concept-forming rather than continuing to adjust wireframes past the point of structural improvement.
+The system challenges, not confirms. Ideating-in-forma pressure-tests your direction by naming what it sacrifices. User-testing-in-forma simulates real users who miss things, get confused, and say blunt things. If a wireframe has a fundamental problem, the system says so. It also flags diminishing returns — telling you to re-run ideating-in-forma rather than continuing to adjust wireframes past the point of structural improvement.
 
 ### Traceability
 
