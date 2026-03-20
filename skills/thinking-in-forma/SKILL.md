@@ -7,7 +7,7 @@ description: Thinking partner for understanding problems, evaluating directions,
 
 ## 1. Read context
 
-Read any design artifacts that exist in CWD: `frame.md`, `ideation.md`, `wireframes.md`, `test-results.md`, `personas.md`, plus the most recent session note in `sessions/`. Also read any input the user provides — ticket content, questions, links, screenshots. Note what exists and what doesn't — this determines how the skill behaves.
+Read any design artifacts that exist in CWD: `frame.md`, `ideation.md`, `wireframes.md`, `test-results.md`, `personas.md`, any research files in `research/`, plus the most recent session note in `sessions/`. Also read any input the user provides — ticket content, questions, links, screenshots. Note what exists and what doesn't — this determines how the skill behaves.
 
 ## 2. Frame
 
@@ -21,6 +21,7 @@ Detect the thinking pattern from `$ARGUMENTS` and context.
   3. **What it connects to** — dependencies, related systems, upstream/downstream effects
   4. **Level of effort** — what scope of design response this warrants (quick fix → full design loop) and why
 - If external research is requested or clearly needed, conduct it and present findings as a separate section.
+- If the research produces substantial findings (more than a few bullet points — e.g., a competitive analysis, technical feasibility assessment, or data synthesis), save the research to `research/{topic-slug}.md` in addition to including findings in the analysis. The research file should be self-contained: include a title, date, the question investigated, findings, and sources/reasoning. Create the `research/` directory if needed. If a research file with the same slug already exists, read it first and either update it or use a more specific slug.
 - **Output:** structured understanding with level-of-effort recommendation
 
 **Hunch ("something feels off"):**
@@ -93,12 +94,14 @@ If no changes needed: skip to Capture.
 
 Write session note to `sessions/YYYY-MM-DD-HHMM.md`:
 
+- **Type:** Thinking
 - **Session summary** — 2-3 sentences
 - **Trigger** — the user's opening statement
 - **Frame** — the precise question or decomposition arrived at
 - **Analysis** — key points from Think (compressed, not the full analysis)
 - **Resolution** — what was decided or understood
 - **Artifact changes** — what was modified, or "None"
+- **Research output** — if research was saved to `research/`, note the filename and one-line description
 - **Feeds forward** — what findings should carry into future skills (level of effort, constraints, research). Only for orient pattern.
 - **Open threads** — anything surfaced but not resolved
 

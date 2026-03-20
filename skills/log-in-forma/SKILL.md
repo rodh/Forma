@@ -9,7 +9,7 @@ You are debriefing a design session. The formal artifacts capture polished outpu
 
 ## 1. Read existing artifacts
 
-Read all design files in the current directory: `frame.md`, `ideation.md`, `wireframes.md`, `test-results.md`, and any existing session notes in `sessions/`. These represent what's already been captured. Your job is to find what hasn't.
+Read all design files in the current directory: `frame.md`, `ideation.md`, `wireframes.md`, `test-results.md`, any research files in `research/`, and any existing session notes in `sessions/`. These represent what's already been captured. Your job is to find what hasn't.
 
 ## 2. Identify what's not in the artifacts
 
@@ -19,13 +19,15 @@ Review the conversation for decisions, rejected directions, insights, open quest
 
 Write the session notes using this structure:
 
+**Type:** Debrief
+
 **Session summary** — 2-3 sentences on what was explored and accomplished this session. Set the context for someone (including future-you) picking this up cold.
 
 **Decisions made** — What was agreed on, including directions that were considered and rejected. For each decision, include the reasoning. These are the "why" behind the current state of the artifacts.
 
 **Key insights** — Observations, reframings, or ideas that emerged from the back-and-forth that aren't captured in the formal artifacts. The stuff that would be lost if this session ended without saving.
 
-**Artifact changes** — What was created or updated this session, with a one-line summary of what changed in each.
+**Artifact changes** — What was created or updated this session, with a one-line summary of what changed in each. Include any research files created or updated in `research/` during this session.
 
 **Stage checkpoint:**
 - **Current stage:** [which stage was active when the session ended]

@@ -100,6 +100,8 @@ Never skip framing-in-forma. Even simple fixes benefit from a clear frame.
 
 **Auto-save.** All skills save their output immediately. Wireframes and test results write to `wireframes.md` and `test-results.md` — the current version always lives at the root. When a new version is created, the previous file is archived to `archive/wireframes-v{N}.md` or `archive/test-results-v{N}.md`. Other artifacts overwrite in place.
 
+**Research.** The thinking-in-forma skill saves substantial research findings to `research/{topic-slug}.md`. These persist across sessions and are surfaced by status-in-forma.
+
 **Any skill can be the entry point.** status-in-forma is optional — run framing-in-forma directly if you don't need the status check.
 
 **Flat directory model.** Skills operate on the current working directory. No required project structure — just `cd` into a directory and start.
