@@ -1,6 +1,6 @@
 # Forma Guide
 
-Forma is a design toolkit for rapid iteration — a set of skills that give your coding agent a design practice. It optimizes for decisions, not pixels — each stage forces a commitment before the next one begins.
+Forma is opinionated design thinking for AI agents — a set of skills that give your coding agent a structured design practice. It optimizes for decisions, not pixels — each stage forces a commitment before the next one begins.
 
 ---
 

@@ -1,8 +1,8 @@
 # Forma
 
-**A structured design practice for AI coding agents.**
+**Opinionated design thinking skills for AI agents.**
 
-Forma is a set of skills that give your coding agent a design workflow — shape ideas, wireframe solutions, test with simulated users, and iterate on what you've built. Works with Claude Code, Codex, and any AI coding agent that reads markdown.
+Forma gives your AI coding agent a design thinking workflow — frame problems, explore solutions, wireframe interfaces, test with simulated users, and iterate on what you've built. Works with Claude Code, Codex, and any AI coding agent that reads markdown.
 
 It runs as an opinionated workflow: each stage produces a persistent artifact that survives across sessions and engages in structured dialogue rather than one-shot generation. Run the stages in order, or jump to the one you need — the workflow adapts either way. You pick up any design exactly where you left off.
 
