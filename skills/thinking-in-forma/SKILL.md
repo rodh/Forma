@@ -34,9 +34,16 @@ Detect the thinking pattern from `$ARGUMENTS` and context.
 - Frame as "[X] vs [Y] given [relevant context from artifacts]"
 - **Output:** the framed decision
 
-**STOP after Frame.** Present the framed output and wait for the user to confirm or adjust before proceeding to Think. Do not deliver Frame and Think in the same response.
+**Research ("look into X", "how does Y work", "what are the patterns for Z"):**
+- Triggered by: competitor/pattern inquiries, focused factual questions, "look into", "how does X handle", "what are the approaches for".
+- Conduct research autonomously — no Frame stop, no session note.
+- Save findings to `research/{topic-slug}.md` with: title, date, question, findings, key takeaways (2-3 bullets), sources (if applicable).
+- Present a summary with key takeaways. The research artifact is the only output.
+- **Skip Think, Act, and Capture** — the saved artifact is the deliverable.
 
-If ambiguous, ask one AskUserQuestion: **A. Understand something** (orient), **B. Surface something** (hunch), **C. Explore a what-if**, **D. Decide between options**. If the user needs a different skill, say so directly.
+**STOP after Frame** (Orient/Hunch/What-if/Decision only). Present the framed output and wait for the user to confirm or adjust before proceeding to Think. Research skips this stop.
+
+If ambiguous, ask one AskUserQuestion: **A. Understand something** (orient), **B. Surface something** (hunch), **C. Explore a what-if**, **D. Decide between options**, **E. Research something** (research). If the user needs a different skill, say so directly.
 
 ## 3. Think
 
@@ -63,6 +70,7 @@ End with 2-3 labeled next moves reflecting the actual situation, not a generic m
 | Hunch | Pause after tensions, check in after each analysis piece | 2-3 |
 | What-if | Four-part analysis as one block, then "worth pursuing or dead end?" | 1 |
 | Decision | Four-part analysis as one block, then "which way are you leaning?" Pressure-test before Act. | 1 |
+| Research | Autonomous — research, save artifact, present summary | 0 (no stops) |
 
 Each pause = **stop and wait** — do not continue to the next phase in the same message. Prefer labeled options (A/B/C) over open-ended questions.
 

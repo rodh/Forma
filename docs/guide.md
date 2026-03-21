@@ -79,7 +79,7 @@ Run the full workflow — you're rethinking the approach. Ideating-in-forma auto
 
 **Pattern:** thinking-in-forma (at any point)
 
-When you need to understand a problem, assess level of effort, or reason through a design decision. Works with or without existing artifacts — if you have a ticket and no design work yet, it decomposes the problem and assesses what level of design response it warrants. If you're mid-process, it handles hunches, what-ifs, and decisions against your existing artifacts. Dialogue scales with ambiguity — vague inputs get more back-and-forth, clear inputs get autonomous analysis.
+When you need to understand a problem, assess level of effort, research a topic, or reason through a design decision. Works with or without existing artifacts — if you have a ticket and no design work yet, it decomposes the problem and assesses what level of design response it warrants. If you're mid-process, it handles hunches, what-ifs, and decisions against your existing artifacts. For focused research questions ("how does X handle Y?", "what are the patterns for Z?"), it conducts research autonomously and saves findings to `research/`. Dialogue scales with ambiguity — vague inputs get more back-and-forth, clear inputs get autonomous analysis.
 
 ### Resuming work
 
