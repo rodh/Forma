@@ -39,8 +39,8 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
 | Skill | What it does | Output |
 |-------|-------------|--------|
 | framing-in-forma | Distill raw context into a working brief through dialogue | `brief.md` |
-| ideating-in-forma | Explore the solution space, develop all approaches to key-screen depth, pick or combine | `concept.md`, `approaches.md`, `exploration/` |
-| wireframing-in-forma | Expand key screens into full-flow ASCII wireframes | `wireframes.md` |
+| ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `wireframes.md`, `exploration/` |
+| wireframing-in-forma | Generate ASCII wireframes from the concept | `wireframes.md` |
 | user-testing-in-forma | AI persona usability walkthroughs | `test-results.md`, `personas.md` |
 
 ### Iteration and session management
@@ -85,10 +85,6 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
 
 > Explore all three.
 
-  I'll explore each approach with 1-2 key screens — enough to
-  compare interaction models. Full wireframing comes after we
-  lock a direction.
-
   A: New "Activity" tab            C: Inline notification banner
   ┌───────────────────────┐        ┌───────────────────────┐
   │ Design Systems        │        │ ┌───────────────────┐ │
@@ -112,17 +108,10 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
   │ └───────────────────┘ │
   └───────────────────────┘
 
-  Explored Activity feed — 1 key screen showing passive tab.
-  Saved to exploration/activity-feed.md
-
-  Explored Smart digest — 1 key screen showing batched summary.
-  Saved to exploration/smart-digest.md
-
-  Explored Notify-on-save — 1 key screen showing inline banner
-  with mute. Saved to exploration/notify-on-save.md
-
   A and B are pull-based — user checks for updates.
   C is push-based — updates come to the user.
+
+  ✓ All three developed → exploration/
 
 > C — mute controls inline is exactly right.
 
@@ -130,28 +119,6 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
   Direction: notify-on-save with inline mute controls.
   Key bet: users will manage noise themselves if controls are
   within reach.
-
-  → Next step: /wireframing-in-forma to build the full flow.
-
-
-▶ /wireframing-in-forma
-
-  Expanding key screens into full flow — notification banner,
-  mute controls, topic list with badges, settings panel.
-
-  ┌──────────────────────────────────┐
-  │ ┌──────────────────────────────┐ │
-  │ │ Sarah saved "Q3 OKRs"        │ │
-  │ │ to Design Systems       [x]  │ │
-  │ │  [View]  [Mute ▾]            │ │
-  │ └──────────────────────────────┘ │
-  │  ★ Design Systems            (3) │
-  │    Product Research          (1) │
-  │    Brand Guidelines              │
-  └──────────────────────────────────┘
-  + empty state, muted state, settings screens
-
-  ✓ Full wireframes saved → wireframes.md
 
 
 ▶ /user-testing-in-forma
