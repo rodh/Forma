@@ -15,9 +15,8 @@ Detect the thinking pattern from `$ARGUMENTS` and context.
 
 **Orient ("help me understand this ticket/problem"):**
 - Triggered by: ticket content, task descriptions, "what is this asking" questions, or raw context with no existing artifacts.
-- Decompose into: (1) what's being asked, (2) the actual problem underneath, (3) what it connects to, (4) level of effort (quick fix → full design loop).
 - If research is needed, conduct and present separately. Save substantial findings to `research/{topic-slug}.md` (self-contained: title, date, question, findings, sources).
-- **Output:** structured understanding with level-of-effort recommendation
+- **Output:** scoped problem statement with initial level-of-effort signal
 
 **Hunch ("something feels off"):**
 - Present compact design state summary (one sentence per artifact), then ask "what's nagging you?"
@@ -34,14 +33,13 @@ Detect the thinking pattern from `$ARGUMENTS` and context.
 - Frame as "[X] vs [Y] given [relevant context from artifacts]"
 - **Output:** the framed decision
 
-**Research ("look into X", "how does Y work", "what are the patterns for Z"):**
+**STOP after Frame** (Orient/Hunch/What-if/Decision only). Present the framed output and wait for the user to confirm or adjust before proceeding to Think.
+
+**Research** ("look into X", "how does Y work", "what are the patterns for Z") **bypasses the main workflow:**
 - Triggered by: competitor/pattern inquiries, focused factual questions, "look into", "how does X handle", "what are the approaches for".
 - Conduct research autonomously — no Frame stop, no session note.
 - Save findings to `research/{topic-slug}.md` with: title, date, question, findings, key takeaways (2-3 bullets), sources (if applicable).
 - Present a summary with key takeaways. The research artifact is the only output.
-- **Skip Think, Act, and Capture** — the saved artifact is the deliverable.
-
-**STOP after Frame** (Orient/Hunch/What-if/Decision only). Present the framed output and wait for the user to confirm or adjust before proceeding to Think. Research skips this stop.
 
 If ambiguous, ask one AskUserQuestion: **A. Understand something** (orient), **B. Surface something** (hunch), **C. Explore a what-if**, **D. Decide between options**, **E. Research something** (research). If the user needs a different skill, say so directly.
 
@@ -93,8 +91,7 @@ Write session note to `sessions/YYYY-MM-DD-HHMM.md` (create directory if needed)
 - **Analysis** — key points from Think (compressed)
 - **Resolution** — what was decided or understood
 - **Artifact changes** — what was modified, or "None"
-- **Research output** — filename and one-line description (if saved to `research/`)
-- **Feeds forward** — findings for future skills (orient pattern only)
+- **Feeds forward** — findings for future skills, including any research saved to `research/` (orient pattern only)
 - **Open threads** — anything surfaced but not resolved
 
 ## Rules
@@ -104,9 +101,6 @@ Write session note to `sessions/YYYY-MM-DD-HHMM.md` (create directory if needed)
 - Steel-man all positions. Don't lead the user toward a predetermined answer.
 - YAGNI: if thinking resolves without needing artifact changes, don't invent changes to make.
 - If thinking reveals an upstream problem (concept-level, not wireframe-level), name it. Don't patch downstream artifacts to work around a concept issue.
-- **Never deliver Frame and Think in the same response.** Each phase ends with the user's input before the next begins.
-- Orient is for understanding, not designing — decompose and assess, don't jump to solutions.
 - Don't skip thinking because it "seems obvious." The user invoked it for a reason.
-- Research must be clearly labeled and separated from analysis — factual vs. assessment.
 
 $ARGUMENTS
