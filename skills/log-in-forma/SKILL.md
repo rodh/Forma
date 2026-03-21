@@ -9,7 +9,7 @@ You are debriefing a design session. The formal artifacts capture polished outpu
 
 ## 1. Read existing artifacts
 
-Read all design files in the current directory: `frame.md`, `ideation.md`, `wireframes.md`, `test-results.md`, any research files in `research/`, and any existing session notes in `sessions/`. These represent what's already been captured. Your job is to find what hasn't.
+Read all design files in the current directory: `brief.md`, `concept.md`, `wireframes.md`, `test-results.md`, any research files in `research/`, and any existing session notes in `sessions/`. These represent what's already been captured. Your job is to find what hasn't.
 
 ## 2. Identify what's not in the artifacts
 

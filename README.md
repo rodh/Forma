@@ -48,8 +48,8 @@ $user-testing-in-forma [screenshot.png]
 
 | Skill | What it does | Output |
 |-------|-------------|--------|
-| framing-in-forma | Distill raw context into a working frame through dialogue | `frame.md` |
-| ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `ideation.md`, `approaches.md`, `wireframes.md`, `exploration/` |
+| framing-in-forma | Distill raw context into a working brief through dialogue | `brief.md` |
+| ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `wireframes.md`, `exploration/` |
 | wireframing-in-forma | Generate ASCII wireframes from the concept | `wireframes.md` |
 | user-testing-in-forma | AI persona usability walkthroughs | `test-results.md`, `personas.md` |
 
@@ -79,7 +79,7 @@ $user-testing-in-forma [screenshot.png]
 
 > Per-topic mute only. Default on, opt-out.
 
-  ✓ Frame saved → frame.md
+  ✓ Brief saved → brief.md
 
 
 ▶ /ideating-in-forma
@@ -125,7 +125,7 @@ $user-testing-in-forma [screenshot.png]
 
 > C — mute controls inline is exactly right.
 
-  ✓ Concept locked → ideation.md
+  ✓ Concept locked → concept.md
   Direction: notify-on-save with inline mute controls.
   Key bet: users will manage noise themselves if controls are
   within reach.

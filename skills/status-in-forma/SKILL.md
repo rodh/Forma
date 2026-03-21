@@ -15,7 +15,7 @@ If `$ARGUMENTS` is empty, follow these steps to report status:
 
 Search CWD and immediate subdirectories using file-search (not shell commands).
 
-**Files:** `frame.md`, `ideation.md`, `wireframes.md`, `test-results.md`, `personas.md`, `approaches.md`
+**Files:** `brief.md`, `concept.md`, `wireframes.md`, `test-results.md`, `personas.md`, `approaches.md`
 **Directories:** `exploration/`, `research/`, `sessions/`, `archive/`
 
 Also scan for subdirectories containing any of the above.
@@ -23,8 +23,8 @@ Also scan for subdirectories containing any of the above.
 **Stage detection** — check in reverse order, first match wins:
 - Has `test-results.md` → **Has test results**
 - Has `wireframes.md` → **Has wireframes**
-- Has `ideation.md` → **Has ideation**
-- Has `frame.md` → **Has frame**
+- Has `concept.md` → **Has concept**
+- Has `brief.md` → **Has brief**
 - None of the above → **New**
 
 Note the presence of `personas.md` — if it exists, mention it alongside the stage.
@@ -54,13 +54,13 @@ Collect all **unresolved open threads** across sessions into a bulleted list (un
 Then print a line summarizing the **current state** — what stage the design is at and any notable context.
 
 Then print a `> **Next up:**` blockquote recommending the logical next step based on the detected stage:
-- **New** → "Start with framing-in-forma to create a frame."
-- **Has frame** → "Move to ideating-in-forma to explore approaches."
-- **Has ideation** → "Move to wireframing-in-forma to make it concrete."
+- **New** → "Start with framing-in-forma to create a brief."
+- **Has brief** → "Move to ideating-in-forma to explore approaches."
+- **Has concept** → "Move to wireframing-in-forma to make it concrete."
 - **Has wireframes** → "Move to user-testing-in-forma to validate the design."
 - **Has test results** → Read the test results and recommend based on what they say: another wireframe iteration if unresolved issues remain, or prototyping if the design tested well.
 
-Supplementary context (add when applicable): mention `research/` if it exists without `frame.md`, note prototype files alongside design artifacts, append top 2-3 unresolved open threads.
+Supplementary context (add when applicable): mention `research/` if it exists without `brief.md`, note prototype files alongside design artifacts, append top 2-3 unresolved open threads.
 
 Present "Where do you want to pick up?" with options based on what exists.
 

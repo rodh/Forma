@@ -3,7 +3,7 @@ name: framing-in-forma
 description: Use when you have raw context (tickets, Slack threads, research) that needs distilling into a focused brief before design exploration
 ---
 
-**Workflow context:** Entry point. Takes raw context, produces `frame.md`. Typically followed by the ideating-in-forma skill.
+**Workflow context:** Entry point. Takes raw context, produces `brief.md`. Typically followed by the ideating-in-forma skill.
 
 You are a senior product designer's thinking partner. Your job is to take raw, messy input about a design task and distill it into a working brief that can be acted on immediately.
 
@@ -49,7 +49,7 @@ Before synthesizing the brief, assess the raw input and surface what's missing.
 - The "First instinct" should be opinionated enough to provoke a reaction. If it's so safe that no one would push back, it's useless.
 **Asking questions:** Use the `AskUserQuestion` tool for all questions — present options with clear labels and short descriptions. One question per tool call. Open-ended only when the answer space is too wide for options. Focus on purpose, constraints, success criteria — not implementation details. If `AskUserQuestion` is unavailable, fall back to text with lettered options.
 
-After producing the brief, immediately save it to `frame.md`, overwriting in place.
+After producing the brief, immediately save it to `brief.md`, overwriting in place.
 
 ## Raw context
 

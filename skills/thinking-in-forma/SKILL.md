@@ -7,7 +7,7 @@ description: Use when you need to reason through a design decision, understand a
 
 ## 1. Read context
 
-Read all design artifacts in CWD (`frame.md`, `ideation.md`, `wireframes.md`, `test-results.md`, `personas.md`, `research/`, latest `sessions/` note) plus any user-provided input. Note what exists and what doesn't — this determines behavior.
+Read all design artifacts in CWD (`brief.md`, `concept.md`, `wireframes.md`, `test-results.md`, `personas.md`, `research/`, latest `sessions/` note) plus any user-provided input. Note what exists and what doesn't — this determines behavior.
 
 ## 2. Frame
 

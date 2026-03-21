@@ -3,11 +3,11 @@ name: ideating-in-forma
 description: Use when you have a working brief and need to explore solution directions — develops all approaches to wireframe depth, then lets you compare and combine before committing
 ---
 
-**Workflow context:** Typically follows framing-in-forma. Reads `frame.md` if available; otherwise asks the user for problem context directly. Produces `ideation.md`, `wireframes.md`, `approaches.md`, and `exploration/` files.
+**Workflow context:** Typically follows framing-in-forma. Reads `brief.md` if available; otherwise asks the user for problem context directly. Produces `concept.md`, `wireframes.md`, `approaches.md`, and `exploration/` files.
 
 ## Finding upstream context
 
-Check for `frame.md` in the current directory. If found, use it. If not, ask: "No frame found. Describe the problem you're solving, who it affects, and any known constraints — I'll work from that."
+Check for `brief.md` in the current directory. If found, use it. If not, ask: "No brief found. Describe the problem you're solving, who it affects, and any known constraints — I'll work from that."
 
 ## Before proposing approaches
 
@@ -57,7 +57,7 @@ After all approaches are processed, present: one-line concept per approach, key 
 - **Picks one:** Promote that approach's concept direction and wireframes directly.
 - **Describes a combination:** Generate combined wireframe + synthesized concept direction. Present for approval before promoting.
 
-Promote final result to `ideation.md` and `wireframes.md`.
+Promote final result to `concept.md` and `wireframes.md`.
 
 ### Step 2 — Tensions
 
@@ -78,7 +78,7 @@ After tensions are resolved, present the concept direction:
 
 ### Step 4 — Save
 
-After the user approves, save to `ideation.md`, overwriting in place. Also save after each subsequent iteration round.
+After the user approves, save to `concept.md`, overwriting in place. Also save after each subsequent iteration round.
 
 ## Rules
 
