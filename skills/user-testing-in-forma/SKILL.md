@@ -13,12 +13,7 @@ Check for `personas.md` in the current directory.
 
 **If found:** Read and use them. Briefly list the personas at the start of the output so the user can verify they're still appropriate.
 
-**If not found:** Ask: "No personas defined yet. Do you want to provide your own, or should I generate them from the brief and concept?"
-
-- If user provides → use those
-- If user says generate → read `brief.md` and `concept.md` from the current directory, generate 2-3 personas
-
-**All paths → save to `personas.md`** in the current directory before running the walkthrough. After first run, the project owns its personas — no more prompts, consistent testing.
+**If not found:** Read `brief.md` and `concept.md` (and any other available artifacts) from the current directory and generate 2-3 personas. Save to `personas.md` before running the walkthrough. After first run, the project owns its personas — consistent testing across iterations.
 
 Good personas have: a name, a role, a key behavioral trait, a trust/speed orientation, their current workflow (what they do today without this product), and a usage context (when/where/how often).
 
