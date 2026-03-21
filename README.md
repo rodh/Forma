@@ -39,7 +39,7 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
 | Skill | What it does | Output |
 |-------|-------------|--------|
 | framing-in-forma | Distill raw context into a working brief through dialogue | `brief.md` |
-| ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `wireframes.md`, `exploration/` |
+| ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `exploration/` |
 | wireframing-in-forma | Generate ASCII wireframes from the concept | `wireframes.md` |
 | user-testing-in-forma | AI persona usability walkthroughs | `test-results.md`, `personas.md` |
 

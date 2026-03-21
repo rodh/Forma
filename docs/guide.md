@@ -10,11 +10,11 @@ Each skill reads the previous stage's artifact, does its work through dialogue o
 
 **Framing** opens a dialogue to distill messy input into a problem statement, constraints, known context, open questions, and an opinionated first instinct. It asks clarifying questions one at a time — probing gaps, surfacing ambiguity, testing assumptions — before synthesizing the frame.
 
-**Ideating** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to wireframe depth. You compare the materialized approaches and pick one or combine elements from several. The result promotes to `concept.md` and `wireframes.md`.
+**Ideating** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to key-screen depth (1-2 screens per approach). You compare the materialized approaches and pick one or combine elements from several. The result promotes to `concept.md`.
 
 **User testing** runs simulated usability walkthroughs with behavioral personas (generated from the frame, provided by you, or loaded from `personas.md`). Each persona encounters the design independently and surfaces friction that generic review misses. Results include consensus issues, a highest-leverage fix, and a check against the concept's key bet.
 
-**Wireframing** translates or refines screen structure using ASCII art. After ideating-in-forma produces initial wireframes, wireframing-in-forma handles iteration — fixing issues from user-testing-in-forma, adjusting layout, adding screens. Wireframing and user testing form a loop: fix issues, retest, repeat until stable. Iteration caps at three rounds.
+**Wireframing** expands key screens from ideating into full-flow wireframes — all screens, state variations, and edge cases. It reads the chosen approach's `exploration/` file to build on the key-screen wireframes, then produces the complete `wireframes.md`. After the first pass, wireframing and user testing form a loop: fix issues, retest, repeat until stable. Iteration caps at three rounds.
 
 ---
 
