@@ -42,6 +42,7 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
 | ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `exploration/` |
 | wireframing-in-forma | Generate ASCII wireframes from the concept | `wireframes.md` |
 | user-testing-in-forma | AI persona usability walkthroughs | `test-results.md`, `personas.md` |
+| autorun-in-forma | Autonomous full pipeline — brief to tested wireframes, no interaction | `run-YYYY-MM-DD-HHMM/` (all artifacts) |
 
 ### Iteration and session management
 

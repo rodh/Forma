@@ -40,15 +40,11 @@ Tell the user: "I'll explore each approach with 1-2 key screens — enough to co
 
 Process each approach from `approaches.md` sequentially. For each approach:
 
-#### A. Auto-resolve tensions
-
-Identify 2-3 key design tensions specific to this approach (not generic UX trade-offs). For each, resolve by picking the option that best aligns with the approach's priorities. Document: what was decided, alternatives considered, why this resolution fits.
-
-#### B. Generate concept direction
+#### A. Generate concept direction
 
 Produce a compact concept summary: core interaction model (one sentence), what it prioritizes, the key bet (assumption about user behavior), biggest risk. Auto-generated — no user input needed.
 
-#### C. Generate key-screen wireframes
+#### B. Generate wireframes
 
 1-2 screens that show the core interaction model for this approach. Full production quality per screen following `wireframe-conventions.md`, but limited scope — no state variations, no full flow. Pick the screens that best reveal how this approach works differently from the others.
 
@@ -60,7 +56,7 @@ After saving, announce: "Explored [approach name] — [N] key screens showing [c
 
 ### Comparison and combination
 
-After all approaches are processed, present: one-line concept per approach, key structural differences across wireframes, which tensions resolved differently. Ask: "Which elements do you want to keep from each? Describe the combination, or pick one outright."
+After all approaches are processed, present: one-line concept per approach, key structural differences across wireframes — reference components by their labels (A1, B3, etc.) when describing what differs. Ask: "Each component is labeled (A1, B2, etc.) — reference labels to describe your combination, or pick one approach outright."
 
 - **Picks one:** Promote that approach's concept direction and wireframes directly.
 - **Describes a combination:** Generate combined wireframe + synthesized concept direction. Present for approval before promoting.

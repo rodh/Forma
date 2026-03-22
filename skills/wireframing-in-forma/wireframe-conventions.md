@@ -12,6 +12,35 @@
 2. **No content on border lines.** Lines with `┌`, `└`, `├`, and separator `─` characters carry only border characters. Content starts on the next line.
 3. **Section labels get their own line.** Labels like "FILTERS", "RESULTS", or section headers sit on their own line with a blank line after them before content begins.
 
+## Component Labels
+
+Label structural components inline so users can reference them by ID (e.g., "I want A1 and B3").
+
+- **Format:** `// {Letter}{Number}: {Short Name}` as a right-side annotation on the first content line of the component
+- **Letter:** Approach letter (A/B/C) when in a multi-approach context; omit the letter for standalone wireframing
+- **Number:** Sequential across all screens in the approach, not per-screen (A1, A2, ... A7 continues into Screen 2)
+- **What to label:** Structural components — distinct UI regions that represent a design decision: navigation bars, content areas, cards, form sections, action groups, modals, sidebars, filter panels
+- **What to skip:** Page-level headers, individual buttons, single text lines, decorative elements
+- **Short names:** 2-3 words max, descriptive of function (e.g., "Alert Card", "Tab Bar", "Filter Panel")
+
+```
+┌──────────────────────────────────────┐
+│ MyApp        [Settings] [Log out]    │
+│                                      │
+│ ┌──────────────────────────────────┐ │
+│ │ ★ 3 items need review           │ │ // A1: Alert Card
+│ │ [Review now]                     │ │
+│ └──────────────────────────────────┘ │
+│                                      │
+│ Name       Status    Due             │ // A2: Task Table
+│ ──────────────────────────────────── │
+│ Q3 OKRs    Pending   Mar 30         │
+│ Brand doc  Done      Mar 15         │
+│                                      │
+│ [* Add Task *]                       │ // A3: Action Bar
+└──────────────────────────────────────┘
+```
+
 ## Interactive Elements
 
 - Buttons: `[Button Label]`

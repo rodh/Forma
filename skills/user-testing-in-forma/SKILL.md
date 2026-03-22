@@ -9,7 +9,7 @@ You are simulating real users walking through a design for the first time. Not a
 
 ## Personas
 
-Check for `personas.md` in the current directory.
+Check for `personas.md` in the current directory, then the parent directory (`../personas.md`).
 
 **If found:** Read and use them. Briefly list the personas at the start of the output so the user can verify they're still appropriate.
 

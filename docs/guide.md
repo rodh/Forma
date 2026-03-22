@@ -81,6 +81,14 @@ Run the full workflow — you're rethinking the approach. Ideating-in-forma auto
 
 When you need to understand a problem, assess level of effort, research a topic, or reason through a design decision. Works with or without existing artifacts — if you have a ticket and no design work yet, it decomposes the problem and assesses what level of design response it warrants. If you're mid-process, it handles hunches, what-ifs, and decisions against your existing artifacts. For focused research questions ("how does X handle Y?", "what are the patterns for Z?"), it conducts research autonomously and saves findings to `research/`. Dialogue scales with ambiguity — vague inputs get more back-and-forth, clear inputs get autonomous analysis.
 
+### First-draft autonomous run
+
+**Pattern:** autorun-in-forma (single command)
+
+When you want a complete first draft without step-by-step interaction — paste raw context and get a timestamped directory with brief, 2-3 developed approaches (each with wireframes and test results), and a comparative summary. Useful for exploring a problem space quickly or for CI/CLI integration where no human is in the loop.
+
+Recovery: review `run-summary.md`, then `cd` into any approach subdirectory and run the interactive skills (wireframing-in-forma, user-testing-in-forma) to iterate from there.
+
 ### Resuming work
 
 Run status-in-forma with no arguments in a directory with design artifacts. It shows existing artifacts, missing artifacts, session context from the most recent session note, and options to continue or advance. Or use status-in-forma with a name argument to create a named subdirectory.
@@ -117,6 +125,8 @@ Skills don't generate output in one shot. Most open a conversation — presentin
 **Dialogue + autonomy.** Framing-in-forma and ideating-in-forma open with structured engagement. Framing-in-forma asks clarifying questions before drafting. Ideating-in-forma presents approaches with trade-offs, then auto-develops all of them — you re-engage to compare, combine, and commit. Challenge an option and the agent rethinks rather than defends. Reject everything and it asks what's wrong — usually revealing a requirement that wasn't in the brief.
 
 **Structured thinking.** Thinking-in-forma works before, during, or between design stages. Without artifacts, it decomposes problems and assesses level of effort. With artifacts, it frames the question (hunch, what-if, or decision), runs structured analysis, and optionally applies changes. Dialogue scales with ambiguity: vague instincts get more back-and-forth to sharpen the question, clear decisions get autonomous comparison.
+
+**Autonomous.** Autorun-in-forma skips all dialogue — it auto-resolves every decision, documents the reasoning and confidence level, and produces the full artifact set in one pass. Review the finished package rather than co-building it. Each decision is tagged [confident] or [review] so you know where to focus attention.
 
 **Iterate.** Wireframing-in-forma and user-testing-in-forma form a loop. User-testing-in-forma surfaces issues; wireframing-in-forma fixes them. Wireframing-in-forma caps at about 3 rounds — if the structure isn't converging, the problem is upstream in the concept.
 
