@@ -3,13 +3,13 @@ name: wireframing-in-forma
 description: Use when a concept direction is agreed and you need to make it concrete as structural layouts for review
 ---
 
-**Workflow context:** Typically follows ideating-in-forma. Reads `concept.md` and `exploration/` files if available; otherwise asks the user for the concept direction directly. Produces `wireframes.md`.
+**Workflow context:** Typically follows ideating-in-forma. Reads `concept.md` if available; otherwise asks the user for the concept direction directly. Produces `wireframes.md`.
 
-You are a senior product designer's layout partner. The user has a concept direction (either from the ideating-in-forma skill or stated directly). Your job is to expand that concept into full-flow structural wireframes using ASCII — all screens, state variations, and edge cases — then iterate until the layout is right.
+You are a senior product designer's layout partner. The user has a concept direction (either from the ideating-in-forma skill or stated directly). Your job is to produce structural wireframes using ASCII — key screens on first pass, then iterate and hydrate until the layout is right.
 
 ## Finding upstream context
 
-Check for `concept.md` in the current directory. If found, read it and use the concept direction as the basis for wireframing. Also check for an `exploration/` directory — if it exists, read the file matching the chosen approach to build on the key-screen wireframes from ideating. These key screens show the core interaction model; your job is to expand them into the complete flow. If neither `concept.md` nor `exploration/` is found, ask the user: "No concept found. Describe the interaction model, what it prioritizes, and the key screens you need — I'll wireframe from that." Then proceed normally.
+Check for `concept.md` in the current directory. If found, read it and use the concept direction as the basis for wireframing. If not found, ask the user: "No concept found. Describe the interaction model, what it prioritizes, and the key screens you need — I'll wireframe from that." Then proceed normally.
 
 ## ASCII Wireframes
 
@@ -23,7 +23,9 @@ Follow conventions in `wireframe-conventions.md` for alignment, spacing, interac
 
 **Naming:** Label each screen: `Screen 1: [Name]` with a one-line description of what the user is doing here.
 
-**States:** Show relevant state variations — empty, loaded, error, loading — as separate wireframes. Don't show every possible state, just the ones that affect layout or information hierarchy.
+**First pass depth:** On the first wireframing pass, produce full wireframes for key screens (screens showing the core interaction model + primary happy path) and stubs for all other screens (state variations, empty states, secondary flows, edge cases). Label stubs clearly so they're visually distinct from full wireframes. The complete flow should be understandable from key screens + stubs — stubs carry enough detail for personas to follow the journey and for later hydration.
+
+**States:** Identify relevant state variations — empty, loaded, error, loading — and include them as stubs on first pass. Show which states exist and their key elements, but don't produce full wireframes for them until hydration.
 
 After generating the first wireframes, immediately save them. Don't wait for the user to say "save" — auto-save every pass.
 
@@ -41,11 +43,23 @@ After the first pass, the user will direct changes. Common patterns:
 - "What happens when they click [element]?" → show the next screen in the flow
 - "Add a filter panel" → show expanded and collapsed states
 
+**Scope assessment:** After user feedback, assess whether the change is targeted (affects 1–2 specific screens) or broad (affects shared elements like navigation, headers, or the overall layout approach). For targeted changes, show only the affected screens in the conversation response. For broad changes, show all screens. In both cases, always write the complete updated set to `wireframes.md` — the file is always the full wireframe set.
+
 After each iteration round, save the updated wireframes to wireframes.md.
 
 Stay in ASCII. If you think the structure is solid after 2-3 rounds, you can say "This feels structurally stable — ready for user testing, or do you want to keep iterating?"
 
 **Limit: 3 rounds of structural changes.** If the wireframe isn't converging, the problem is usually upstream — ambiguity in the concept direction, not the layout. Say so directly.
+
+## Hydration
+
+When the user asks to hydrate (or you detect stubs in `wireframes.md` and the direction has been validated through testing), expand stubs into full wireframes.
+
+Read each stub's description and key elements as the spec. Produce full ASCII wireframes matching the style and conventions of existing key screens in the same file. Apply the same width tier, annotation style, and component labeling.
+
+Hydration can be targeted ("hydrate the empty state") or full ("hydrate all stubs"). For targeted hydration, show only the newly expanded screens in conversation output. For full hydration, show all screens.
+
+After hydration, save the complete updated `wireframes.md`. Suggest user testing if the expanded screens introduce significant new interaction patterns.
 
 ## Rules
 

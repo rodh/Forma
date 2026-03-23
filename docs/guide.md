@@ -10,11 +10,11 @@ Each skill reads the previous stage's artifact, does its work through dialogue o
 
 **Framing** opens a dialogue to distill messy input into a problem statement, constraints, known context, open questions, and an opinionated first instinct. It asks clarifying questions one at a time — probing gaps, surfacing ambiguity, testing assumptions — before synthesizing the frame.
 
-**Ideating** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — then auto-develops all of them to key-screen depth (1-2 screens per approach). You compare the materialized approaches and pick one or combine elements from several. The result promotes to `concept.md`.
+**Ideating** explores the solution space. It presents genuinely different approaches — different interaction models with different trade-offs — as text descriptions. You compare the approaches, pick one or combine elements from several. The result promotes to `concept.md`.
 
 **User testing** runs simulated usability walkthroughs with behavioral personas (generated from the frame, provided by you, or loaded from `personas.md`). Each persona encounters the design independently and surfaces friction that generic review misses. Results include consensus issues, a highest-leverage fix, and a check against the concept's key bet.
 
-**Wireframing** expands key screens from ideating into full-flow wireframes — all screens, state variations, and edge cases. It reads the chosen approach's `exploration/` file to build on the key-screen wireframes, then produces the complete `wireframes.md`. After the first pass, wireframing and user testing form a loop: fix issues, retest, repeat until stable. Iteration caps at three rounds.
+**Wireframing** produces key screens + stubs on first pass — full wireframes for screens showing the core interaction model and primary happy path, lightweight stubs for state variations, secondary flows, and edge cases. After testing validates the direction, hydration expands stubs into full wireframes. After the first pass, wireframing and user testing form a loop: fix issues, retest, repeat until stable. Iteration caps at three rounds.
 
 ---
 
@@ -73,7 +73,7 @@ Skip ideating-in-forma if the direction is obvious (e.g., "add sort options to a
 
 **Pattern:** framing-in-forma → ideating-in-forma → user-testing-in-forma → [wireframing-in-forma ↔ user-testing-in-forma]
 
-Run the full workflow — you're rethinking the approach. Ideating-in-forma auto-develops all directions to wireframe depth so you can compare visually before committing.
+Run the full workflow — you're rethinking the approach. Ideating-in-forma presents genuinely different directions so you can compare before committing.
 
 ### Thinking partner
 
@@ -85,7 +85,7 @@ When you need to understand a problem, assess level of effort, research a topic,
 
 **Pattern:** autorun-in-forma (single command)
 
-When you want a complete first draft without step-by-step interaction — paste raw context and get a timestamped directory with brief, 2-3 developed approaches (each with wireframes and test results), and a comparative summary. Useful for exploring a problem space quickly or for CI/CLI integration where no human is in the loop.
+When you want a complete first draft without step-by-step interaction — paste raw context and get a timestamped directory with brief, 2-3 approaches (each with key screens + stubs and test results), and a comparative summary. No iteration — action items from testing provide enough signal to compare. Useful for exploring a problem space quickly or for CI/CLI integration where no human is in the loop.
 
 Recovery: review `run-summary.md`, then `cd` into any approach subdirectory and run the interactive skills (wireframing-in-forma, user-testing-in-forma) to iterate from there.
 
@@ -122,7 +122,7 @@ Skills don't generate output in one shot. Most open a conversation — presentin
 
 **Absorb.** Some skills take input and produce output without back-and-forth. User testing runs persona walkthroughs against your wireframes. Recap captures session thinking. You give the agent material, it processes it, done.
 
-**Dialogue + autonomy.** Framing-in-forma and ideating-in-forma open with structured engagement. Framing-in-forma asks clarifying questions before drafting. Ideating-in-forma presents approaches with trade-offs, then auto-develops all of them — you re-engage to compare, combine, and commit. Challenge an option and the agent rethinks rather than defends. Reject everything and it asks what's wrong — usually revealing a requirement that wasn't in the brief.
+**Dialogue + autonomy.** Framing-in-forma and ideating-in-forma open with structured engagement. Framing-in-forma asks clarifying questions before drafting. Ideating-in-forma presents approaches with trade-offs — you compare, pick, or combine. Challenge an option and the agent rethinks rather than defends. Reject everything and it asks what's wrong — usually revealing a requirement that wasn't in the brief.
 
 **Structured thinking.** Thinking-in-forma works before, during, or between design stages. Without artifacts, it decomposes problems and assesses level of effort. With artifacts, it frames the question (hunch, what-if, or decision), runs structured analysis, and optionally applies changes. Dialogue scales with ambiguity: vague instincts get more back-and-forth to sharpen the question, clear decisions get autonomous comparison.
 

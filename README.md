@@ -39,7 +39,7 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
 | Skill | What it does | Output |
 |-------|-------------|--------|
 | framing-in-forma | Distill raw context into a working brief through dialogue | `brief.md` |
-| ideating-in-forma | Explore the solution space, develop all approaches to wireframe depth, pick or combine | `concept.md`, `approaches.md`, `exploration/` |
+| ideating-in-forma | Explore the solution space, present approaches as text, pick or combine | `concept.md`, `approaches.md` |
 | wireframing-in-forma | Generate ASCII wireframes from the concept | `wireframes.md` |
 | user-testing-in-forma | AI persona usability walkthroughs | `test-results.md`, `personas.md` |
 | autorun-in-forma | Autonomous full pipeline — brief to tested wireframes, no interaction | `run-YYYY-MM-DD-HHMM/` (all artifacts) |
@@ -84,36 +84,6 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
   C. Notify-on-save — push per save, per-topic mute.
      Immediate, but noisier.
 
-> Explore all three.
-
-  A: New "Activity" tab            C: Inline notification banner
-  ┌───────────────────────┐        ┌───────────────────────┐
-  │ Design Systems        │        │ ┌───────────────────┐ │
-  │ [Saves] [Activity]    │        │ │ Sarah saved "Q3   │ │
-  │ ┌───────────────────┐ │        │ │ OKRs" [Mute▾] [x] │ │
-  │ │ Sarah: Q3 OKRs    │ │        │ │ [View]             │ │
-  │ │ 2h ago            │ │        │ └───────────────────┘ │
-  │ │ James: Brand doc  │ │        │ ★ Design Systems  (3) │
-  │ │ yesterday         │ │        │   Product Research (1)│
-  │ └───────────────────┘ │        │   Brand Guidelines    │
-  └───────────────────────┘        └───────────────────────┘
-
-  B: Daily digest notification
-  ┌───────────────────────┐
-  │ Today's Activity      │
-  │ ┌───────────────────┐ │
-  │ │ Design Systems    │ │
-  │ │ 3 new saves today │ │
-  │ │ Product Research  │ │
-  │ │ 1 new save today  │ │
-  │ └───────────────────┘ │
-  └───────────────────────┘
-
-  A and B are pull-based — user checks for updates.
-  C is push-based — updates come to the user.
-
-  ✓ All three developed → exploration/
-
 > C — mute controls inline is exactly right.
 
   ✓ Concept locked → concept.md
@@ -122,18 +92,9 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
   within reach.
 
 
-▶ /user-testing-in-forma
+▶ /wireframing-in-forma
 
-  3 personas walked through the design independently.
-  Consensus issue: mute toggle is discoverable but "mute duration"
-  isn't — all 3 expected a way to mute temporarily, not just on/off.
-  Recommendation: add a duration picker (1h, 1d, forever) to the
-  mute action.
-
-  ✓ Test results saved → test-results.md
-
-
-▶ /wireframing-in-forma fix the mute duration issue
+  Key screens:
 
   ┌──────────────────────────────────┐
   │ ┌──────────────────────────────┐ │
@@ -151,13 +112,29 @@ Each skill must be a direct child of `~/.codex/skills/` so Codex can discover it
   │    Brand Guidelines              │
   └──────────────────────────────────┘
 
-  ✓ Wireframes updated → wireframes.md
+  Stubs:
+
+  Screen 3: Empty State — No Notifications
+  What the user sees with no recent activity.
+  - "All caught up" message
+  - Link to notification settings
+
+  Screen 4: Muted Topic — Visual Treatment
+  How a muted topic appears in the sidebar.
+  - Muted icon indicator
+  - Dimmed unread count
+  - [Unmute] action on hover
+
+  ✓ Key screens + stubs saved → wireframes.md
 
 
 ▶ /user-testing-in-forma
 
-  3 personas re-tested the updated wireframe.
-  No critical issues. Minor: consider "Unmute" confirmation.
+  3 personas walked through the key screens + stubs.
+  Consensus issue: mute toggle is discoverable but "mute duration"
+  isn't — all 3 expected a way to mute temporarily, not just on/off.
+  Recommendation: add a duration picker (1h, 1d, forever) to the
+  mute action.
 
   ✓ Test results saved → test-results.md
 

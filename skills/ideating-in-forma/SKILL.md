@@ -1,9 +1,9 @@
 ---
 name: ideating-in-forma
-description: Use when you have a working brief and need to explore solution directions — develops all approaches to wireframe depth, then lets you compare and combine before committing
+description: Use when you have a working brief and need to explore solution directions — presents genuinely different approaches as text, then helps you pick or combine before committing
 ---
 
-**Workflow context:** Typically follows framing-in-forma. Reads `brief.md` if available; otherwise asks the user for problem context directly. Produces `concept.md`, `approaches.md`, and `exploration/` files.
+**Workflow context:** Typically follows framing-in-forma. Reads `brief.md` if available; otherwise asks the user for problem context directly. Produces `concept.md` and `approaches.md`.
 
 ## Finding upstream context
 
@@ -30,38 +30,9 @@ Immediately save to `approaches.md`, overwriting in place.
 **Stop and wait** for the user's reaction.
 
 **Branching:**
-- **One approach only** (narrowed during framing or only one viable): skip pipeline, go to Step 3 (Tensions).
-- **User picks a specific approach**: go to Step 3 (Tensions) with that approach — quiet escape hatch, don't present it as an option.
-- **Otherwise** (user says "go," reacts without picking, or any non-specific response): proceed to autonomous pipeline below.
-
-### Autonomous pipeline
-
-Tell the user: "I'll explore each approach with 1-2 key screens — enough to compare interaction models. Full wireframing comes after we lock a direction."
-
-Process each approach from `approaches.md` sequentially. For each approach:
-
-#### A. Generate concept direction
-
-Produce a compact concept summary: core interaction model (one sentence), what it prioritizes, the key bet (assumption about user behavior), biggest risk. Auto-generated — no user input needed.
-
-#### B. Generate wireframes
-
-1-2 screens that show the core interaction model for this approach. Full production quality per screen following `wireframe-conventions.md`, but limited scope — no state variations, no full flow. Pick the screens that best reveal how this approach works differently from the others.
-
-#### Output per approach
-
-Save each to `exploration/{approach-slug}.md` (create directory if needed). Three sections: **Auto-resolved tensions**, **Concept direction**, **Wireframes**. Start the Wireframes section with: "*Key screens only — showing the core interaction model. Run /wireframing-in-forma after concept lock for the full flow.*"
-
-After saving, announce: "Explored [approach name] — [N] key screens showing [core interaction]. Saved to exploration/[slug].md"
-
-### Comparison and combination
-
-After all approaches are processed, present: one-line concept per approach, key structural differences across wireframes — reference components by their labels (A1, B3, etc.) when describing what differs. Ask: "Each component is labeled (A1, B2, etc.) — reference labels to describe your combination, or pick one approach outright."
-
-- **Picks one:** Promote that approach's concept direction and wireframes directly.
-- **Describes a combination:** Generate combined wireframe + synthesized concept direction. Present for approval before promoting.
-
-Promote final result to `concept.md`.
+- **One approach only** (narrowed during framing or only one viable): skip to Step 3 (Tensions).
+- **User picks a specific approach**: go to Step 3 with that approach.
+- **User doesn't pick:** ask them to choose — "Which approach do you want to explore?"
 
 ### Step 3 — Tensions
 
@@ -91,10 +62,8 @@ After the user approves, save to `concept.md`, overwriting in place. Also save a
 - Be direct. No preamble, no filler. Labeled bullets for trade-offs and scenarios; prose for concept direction and key bet reasoning.
 - The concept direction must be specific enough to wireframe against. "A clean, intuitive interface" is not a concept direction. "A batch-action queue where the advisor reviews exceptions only, with the system auto-resolving anything above 90% confidence" is.
 - If the user's instinct is strong, don't manufacture disagreement — pressure-test briefly and help them move forward. Flag diminishing returns if they're wordsmithing a solid concept.
-- Autonomous pipeline wireframes must meet wireframing skill quality standard — full ASCII, realistic placeholders, labeled screens. Key screens only (1-2 per approach) — enough to compare interaction models, not full flows.
-- Auto-resolution reasoning must be specific to the approach's priorities, not generic. Document every autonomous decision — the user needs to see exactly what was decided and why.
 - **YAGNI.** Strip functionality not implied by the brief. Add a **Trimmed** note.
-- **Hard gate.** Do not suggest wireframing-in-forma until the user explicitly approves the concept direction. Once approved, wireframing-in-forma is the natural next step — it expands key screens into the full flow with all screens, state variations, and edge cases.
+- **Hard gate.** Do not suggest wireframing-in-forma until the user explicitly approves the concept direction. Once approved, wireframing-in-forma is the natural next step — it produces key screens + stubs, with hydration as a later step.
 - **Asking questions:** Use `AskUserQuestion` with labeled options. One question per tool call. Open-ended only when the answer space is too wide for options. If unavailable, fall back to text with lettered options.
 
 $ARGUMENTS

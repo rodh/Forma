@@ -1,20 +1,8 @@
 # Test Output Format
 
-## Per-Persona Walkthroughs
+## Internal Process
 
-This content appears under `## Detailed walkthroughs` at the end of the output — after action items, consensus issues, and highest-leverage fix. Generate it first, then synthesize the sections above from it.
-
-Walk through each screen the persona encounters. For each screen:
-
-- One short prose sentence setting the scene — what they notice, their posture toward the screen.
-- Then bold-labeled bullets for each observation: `- **Bold label.** Explanation sentence(s).`
-- If a screen has no prose setup worth writing (the persona's reaction is purely tactical), go straight to bullets.
-
-Cover first impressions, task attempts, and friction points within the per-screen walkthrough. Every observation must be specific to this persona's behavior pattern — not generic usability notes.
-
-**What they'd say:** A blockquote with bold label — something this person would actually say out loud, not UX jargon. Format: `> **What she'd say:** "quote"`
-
-**Would they come back?** A bold-labeled prose paragraph. After first use, do they adopt this or revert to their old workflow? Why? This is the most important question — a design can be usable but still not adopted.
+Before writing any output, mentally walk through each screen per persona — first impressions, task attempts, friction points, what they'd say out loud. This internal walkthrough is the raw material for every section below. Do not output the walkthrough itself.
 
 ## Output Order
 
@@ -22,11 +10,27 @@ After the personas list, produce the following sections in this order:
 
 ### Action items
 
-Always use three sections (omit any that would be empty). Number items sequentially as AI-{n} — these IDs are stable references across test iterations. Format: `- **AI-{n}.** Brief description — why it matters`
+Always use three sections (omit any that would be empty). Number items sequentially as AI-{n} — these IDs are stable references across test iterations.
+
+Each action item gets 1–2 evidence bullets showing which persona hit it and how. Format:
+
+```
+- **AI-{n}.** Brief description — why it matters.
+  - *Evidence:* Persona (trait) observed behavior or specific failure.
+  - *Evidence:* Persona (trait) observed behavior or specific failure.
+```
 
 - **Resolved from previous test:** Items the current wireframes have addressed. Preserve original AI-{n} IDs. (Empty on first test run.)
 - **Remaining issues:** Items still present from prior tests. Preserve original AI-{n} IDs. Re-state why each still matters. (Empty on first test run.)
 - **New findings:** Issues found in this test. On first run, this contains all items. On subsequent runs, continue numbering from max prior ID + 1.
+
+### What works
+
+Short list of design positives grounded in persona behavior — what the design gets right and why it works for these users. Format:
+
+```
+- **Short label.** What works and which persona behavior confirms it.
+```
 
 ### Consensus issues
 
@@ -36,8 +40,12 @@ What problems did multiple personas hit? Numbered list, each with evidence. Belo
 
 One recommendation, bolded, with 2–4 bullets on what it accomplishes. End with a readiness assessment: where the design stands and a clear next step (iterate wireframes, move to prototype, run another targeted test, etc.).
 
-If the concept from the ideating-in-forma skill included a key bet, report whether the walkthroughs validated or contradicted it.
+If the concept from the ideating-in-forma skill included a key bet, report whether the internal walkthroughs validated or contradicted it.
 
-### Detailed walkthroughs
+### Adoption
 
-Output all per-persona walkthroughs under a `## Detailed walkthroughs` heading — repositioned to the end so actionable findings come first.
+One line per persona — would they adopt this over their current workflow, and why? Format:
+
+```
+- **Persona name:** Adopts / Hesitant / Unlikely — reason tied to their current workflow.
+```

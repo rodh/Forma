@@ -16,7 +16,7 @@ If `$ARGUMENTS` is empty, follow these steps to report status:
 Search CWD and immediate subdirectories using file-search (not shell commands).
 
 **Files:** `brief.md`, `concept.md`, `wireframes.md`, `test-results.md`, `personas.md`, `approaches.md`
-**Directories:** `exploration/`, `research/`, `sessions/`, `archive/`
+**Directories:** `research/`, `sessions/`, `archive/`
 
 Also scan for subdirectories containing any of the above.
 
@@ -33,7 +33,7 @@ Note the presence of `personas.md` — if it exists, mention it alongside the st
 
 **If artifacts exist in CWD:**
 
-Print an **"Existing artifacts"** markdown table (`File` | `Contents`). One row per artifact, 1-2 sentence summary each. Include `approaches.md`, `exploration/` (with file count), and `research/` (with count and summaries) only when they exist.
+Print an **"Existing artifacts"** markdown table (`File` | `Contents`). One row per artifact, 1-2 sentence summary each. Include `approaches.md` and `research/` (with count and summaries) only when they exist.
 
 If both `test-results.md` and `wireframes.md` exist, read the version from the `wireframes.md` header (`# Wireframes v{N}`). Read the `**Tested against:** wireframes v{X}` line in `test-results.md`. If the wireframes version is newer than what was tested, note this — e.g., "Test results are from wireframes v2 (current wireframes are v3) — consider re-testing." Also note how many items appear under "Remaining issues" and "New findings."
 
