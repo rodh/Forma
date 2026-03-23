@@ -51,7 +51,7 @@ Dispatch a subagent:
 - **Args:** None (reads `brief.md` from the run directory)
 - **Working directory:** The run root
 - **Auto-resolve:** Open questions from brief, approach selection, design tensions, concept approval
-- **Additional instruction:** Skip step B ("Generate wireframes") in the autonomous pipeline — produce only the concept direction per approach. Do NOT create the `exploration/` directory or files. Instead, write each approach's concept direction directly to `{approach-slug}/concept.md`. Also skip the "Comparison and combination" step. Stop after producing `approaches.md` and the per-approach `concept.md` files.
+- **Additional instruction:** Auto-resolve open questions and approach selection. Write each approach's concept direction to `{approach-slug}/concept.md`. Output `approaches.md` at the run root.
 - **Expected output:** `approaches.md`, `{approach-slug}/concept.md` files
 
 Wait for completion. Parse `approaches.md` to extract approach slugs for Phase 3.
@@ -75,7 +75,7 @@ Dispatch a subagent:
 - **Skill:** `wireframing-in-forma`
 - **Args:** None (reads `concept.md` from the approach subdirectory)
 - **Working directory:** The approach subdirectory
-- **Auto-resolve:** Iterative feedback (agent self-critiques and refines)
+- **Additional instruction:** Produce key screens + stubs per the wireframing skill's first-pass depth rules. Do not hydrate stubs. Do not self-iterate — produce one pass only and stop.
 - **Expected output:** `wireframes.md`
 
 #### 3b — User test
@@ -87,12 +87,9 @@ Dispatch a subagent (after 3a completes):
 - **Auto-resolve:** Already autonomous (no user questions in this skill)
 - **Expected output:** `test-results.md`
 
-#### 3c — Iterate (cap: 1 cycle)
+#### 3c — No iteration
 
-After testing, read `test-results.md`. If any consensus issues are tagged "Fix now":
-1. Re-invoke `wireframing-in-forma` subagent to revise wireframes based on findings
-2. Re-invoke `user-testing-in-forma` subagent to retest
-3. Stop after one iteration regardless — note any remaining Fix Now items as unresolved
+Autorun does not iterate wireframes. Action items from testing provide enough signal to compare approaches. Iteration and hydration happen interactively after the user reviews the run output.
 
 ### Phase 4 — Summarize
 
@@ -100,12 +97,12 @@ This phase is NOT a skill invocation — autorun itself produces `run-summary.md
 
 Read all artifacts from all approaches and produce these sections:
 
-- **Approach comparison.** One-line concept per approach, how each tested, key structural differences.
+- **Approach comparison.** One-line concept per approach, how each tested (key screens + stubs), key structural differences.
 - **Key bets.** Which bets validated vs. failed per approach.
 - **Recommendation.** Which approach tested strongest, or suggested combination.
 - **Decision trail.** Table with columns: phase, decision, alternatives, reasoning, confidence tag. Aggregate all auto-resolved decisions from all subagent outputs.
 - **Items for review.** All [review]-tagged decisions as a scannable checklist.
-- **Unresolved issues.** Remaining Fix Now items across approaches after iteration cap.
+- **Action items.** Outstanding test findings across approaches for interactive follow-up.
 
 ## Directory structure
 

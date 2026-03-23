@@ -46,15 +46,14 @@ Start the file with `# Test Results v{N}` where N = count of existing `archive/t
 
 ## Output
 
-Follow the output format in `test-output-format.md` for walkthrough structure, action items, and synthesis sections.
+Mentally walk through each screen per persona first — first impressions, task attempts, friction, what they'd say. This internal walkthrough is your raw material, but do not output it. Instead, synthesize it into the structured sections defined in `test-output-format.md`: action items with inline evidence, what works, consensus issues, highest-leverage fix, and adoption verdicts.
 
 ## Rules
 
 - Be direct. No preamble, no filler.
-- Per-screen walkthroughs: one prose setup sentence, then bold-labeled bullets. Quotes and "would they come back" stay as prose. Analysis sections are fully structured.
 - Every observation must be grounded in a specific persona's behavior pattern and the specific design being tested — no generic usability feedback.
 - If the design description is too vague to simulate a walkthrough, say so and ask for specifics. Don't fake it.
 - Don't soften the findings. If the design has a fundamental problem, say it directly.
-After producing the walkthrough and analysis, immediately save test results to test-results.md (and `personas.md` if generated).
+After producing the output, immediately save test results to test-results.md (and `personas.md` if generated).
 
 $ARGUMENTS
