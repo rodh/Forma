@@ -75,8 +75,7 @@ Dispatch a subagent:
 - **Skill:** `wireframing-in-forma`
 - **Args:** None (reads `concept.md` from the approach subdirectory)
 - **Working directory:** The approach subdirectory
-- **Auto-resolve:** Iterative feedback (agent self-critiques and refines)
-- **Additional instruction:** Produce key screens + stubs per the wireframing skill's first-pass depth rules. Do not hydrate stubs.
+- **Additional instruction:** Produce key screens + stubs per the wireframing skill's first-pass depth rules. Do not hydrate stubs. Do not self-iterate — produce one pass only and stop.
 - **Expected output:** `wireframes.md`
 
 #### 3b — User test
