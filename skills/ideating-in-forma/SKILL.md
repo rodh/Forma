@@ -23,7 +23,7 @@ After open questions are resolved, ask 1-2 framing questions if the user's prior
 
 ### Step 2 — Approaches
 
-Present 2-3 approaches. For each: core interaction model (one sentence), what it prioritizes, what it sacrifices, when it wins, when it struggles. Use labeled bullets. Approaches must differ in interaction model, not just UI chrome.
+Present 2-3 approaches. For each: core interaction model (one sentence), what it prioritizes, what it trades away. Use labeled bullets. Approaches must differ in interaction model, not just UI chrome.
 
 Immediately save to `approaches.md`, overwriting in place.
 
